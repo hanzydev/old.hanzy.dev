@@ -1,24 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-type License = {
-    name: string;
-    long_name: string;
-};
-
-type Repository = {
-    name: string;
-    url: `https://github.com/${string}/${string}`;
-    description: string;
-    homepage: string;
-    stars: number;
-    language: string;
-    license: License | 'Not Licensed';
-};
-
-type RepositoriesResponse = {
-    ok: boolean;
-    repositories: Repository[];
-};
+import type { RepositoriesResponse } from '@/types';
 
 export default async function handler(
     req: NextApiRequest,

@@ -1,50 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-type Status = 'online' | 'idle' | 'dnd' | 'offline';
-
-enum StatusText {
-    online = 'Online',
-    idle = 'Idle',
-    dnd = 'Do Not Disturb',
-    offline = 'Offline',
-}
-
-type CodeActivity = {
-    name: 'Visual Studio' | 'Visual Studio Code';
-    state: string;
-    details: string;
-    startTimestamp: number;
-    assets: {
-        image: string;
-        text: string;
-    };
-};
-
-type LanyardDiscordUserData = {
-    username: string;
-    discriminator: string;
-    tag: string;
-    id: string;
-    avatar_url: string | null;
-    status_text: StatusText;
-    status: Status;
-};
-
-type LanyardDataResponse = {
-    code: string;
-    custom_keys: Record<string, any>;
-    discord_user: LanyardDiscordUserData;
-    code_activities: CodeActivity[];
-    ok: true;
-};
-
-type LanyardErrorResponse = {
-    error: string;
-    code: string;
-    ok: false;
-};
-
-type LanyardResponse = LanyardDataResponse | LanyardErrorResponse;
+import { type CodeActivity, type LanyardResponse, type Status, StatusText } from '@/types';
 
 function resolveVSCActivityImage(raw: string) {
     const match = raw.match(
