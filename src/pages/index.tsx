@@ -17,5 +17,11 @@ export default function Home() {
             .then((data) => setRepositories(data.repositories));
     }, []);
 
-    return <div></div>;
+    return (
+        <div>
+            {repositories?.map((r, i) => (
+                <div key={i}>{r.name}</div>
+            ))}
+        </div>
+    );
 }
