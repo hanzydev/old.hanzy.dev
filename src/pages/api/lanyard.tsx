@@ -9,7 +9,16 @@ enum StatusText {
     offline = 'Offline',
 }
 
-type CodeActivity = {};
+type CodeActivity = {
+    name: 'Visual Studio' | 'Visual Studio Code';
+    state: string;
+    details: string;
+    startTimestamp: number;
+    assets: {
+        image: string;
+        text: string;
+    };
+};
 
 type LanyardDiscordUserData = {
     username: string;
@@ -122,6 +131,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             status_text: StatusText[discordUser.status as Status],
             status: discordUser.status as Status,
         },
-        code_activities: codeActivities,
+        code_activities: codeActivities as CodeActivity[],
     });
 }
