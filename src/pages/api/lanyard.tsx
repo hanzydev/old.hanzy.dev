@@ -82,7 +82,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 ? `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.${
                       discordUser.avatar.startsWith('a_') ? 'gif' : 'png'
                   }`
-                : null,
+                : `https://cdn.discordapp.com/embed/avatars/${discordUser.discriminator % 5}.png`,
             status_text: StatusText[discordUser.status as Status],
             status: discordUser.status as Status,
         },
