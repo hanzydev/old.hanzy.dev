@@ -22,6 +22,7 @@ export default async function handler(
                     description: repo.description,
                     homepage: repo.homepage,
                     stars: repo.stargazers_count,
+                    forks: repo.forks_count,
                     language: repo.language,
                     license: repo.license
                         ? {

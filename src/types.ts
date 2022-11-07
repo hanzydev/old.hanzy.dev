@@ -55,6 +55,7 @@ export interface Repository {
     description: string;
     homepage: string;
     stars: number;
+    forks: number;
     language: string;
     license: License | 'Not Licensed';
 };
