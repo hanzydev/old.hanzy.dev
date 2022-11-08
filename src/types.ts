@@ -1,17 +1,10 @@
 export type Status = 'online' | 'idle' | 'dnd' | 'offline';
 
-export enum StatusText {
-    online = 'Online',
-    idle = 'Idle',
-    dnd = 'Do Not Disturb',
-    offline = 'Offline',
-}
-
 export interface CodeActivity {
     name: 'Visual Studio' | 'Visual Studio Code';
     state: string;
     details: string;
-    startTimestamp: number;
+    start_timestamp: number;
     assets: {
         image: string;
         text: string;
@@ -24,7 +17,6 @@ export interface LanyardDiscordUserData {
     tag: string;
     id: string;
     avatar_url: string | null;
-    status_text: StatusText;
     status: Status;
 }
 
@@ -47,7 +39,7 @@ export type LanyardResponse = LanyardData | LanyardErrorData;
 export interface License {
     name: string;
     long_name: string;
-};
+}
 
 export interface Repository {
     name: string;
@@ -58,9 +50,9 @@ export interface Repository {
     forks: number;
     language: string;
     license: License | 'Not Licensed';
-};
+}
 
 export interface RepositoriesResponse {
     ok: boolean;
     repositories: Repository[];
-};
+}

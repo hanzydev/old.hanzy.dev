@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const Profile = dynamic(() => import('@/components/Profile'));
+const Profile = dynamic(() => import('@/components/Profile/Profile'));
 
 export default function Home() {
     return (

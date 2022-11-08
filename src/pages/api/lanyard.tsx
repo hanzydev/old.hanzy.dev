@@ -1,5 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { type CodeActivity, type LanyardResponse, type Status, StatusText } from '@/types';
+import {
+    type CodeActivity,
+    type LanyardResponse,
+    type Status,
+} from '@/types';
 
 function resolveVSCActivityImage(raw: string) {
     const match = raw.match(
@@ -53,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                         ? activity.state
                         : `Working on ${activity.details.replace(/File /g, '')}`,
                 details: activity.name === 'Code' ? activity.details : `In ${activity.state}`,
-                startTimestamp: activity.timestamps.start,
+                start_timestamp: activity.timestamps.start,
                 assets: {
                     image:
                         activity.name === 'Code'
@@ -69,6 +73,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             };
         });
 
+    const discordStatus = data.data.discord_status as Status;
+
     return res.status(200).json({
         ok: true,
         code: 'success',
@@ -78,13 +84,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             discriminator: discordUser.discriminator,
             tag: `${discordUser.username}#${discordUser.discriminator}`,
             id: discordUser.id,
+            status: discordStatus,
             avatar_url: discordUser.avatar
                 ? `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.${
                       discordUser.avatar.startsWith('a_') ? 'gif' : 'png'
                   }`
                 : `https://cdn.discordapp.com/embed/avatars/${discordUser.discriminator % 5}.png`,
-            status_text: StatusText[discordUser.status as Status],
-            status: discordUser.status as Status,
         },
         code_activities: codeActivities as CodeActivity[],
     });

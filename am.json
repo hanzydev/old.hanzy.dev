@@ -1,0 +1,48 @@
+{
+    "success": true,
+    "data": {
+        "spotify": null,
+        "listening_to_spotify": false,
+        "kv": { "name": "Emirhan", "living_in": "Istanbul/Turkey" },
+        "discord_user": {
+            "username": "deliever'xd",
+            "public_flags": 128,
+            "id": "931957993925378050",
+            "discriminator": "2022",
+            "bot": false,
+            "avatar": "cba161fa6ac98d0912766b4948cdb234"
+        },
+        "discord_status": "dnd",
+        "activities": [
+            {
+                "type": 4,
+                "state": "https://zeit.codes",
+                "name": "Custom Status",
+                "id": "custom",
+                "emoji": { "name": "😎" },
+                "created_at": 1667919590135
+            },
+            {
+                "type": 0,
+                "timestamps": { "start": 1667918553328 },
+                "state": "Working on lanyard.tsx:78:25",
+                "session_id": "b130748c57a1e60e5f3f5365877847b3",
+                "name": "Code",
+                "id": "eb5fc83968275da8",
+                "details": "In deliever42-website - 0 problems found",
+                "created_at": 1667919590136,
+                "buttons": ["View Repository"],
+                "assets": {
+                    "small_text": "Visual Studio Code",
+                    "small_image": "mp:external/Joitre7BBxO-F2IaS7R300AaAcixAvPu3WD1YchRgdc/https/raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/vscode.png",
+                    "large_text": "Editing a TSX file",
+                    "large_image": "mp:external/ledVVfR9-gwyjYvoVaqZjX0LJmFiM51gyQ3hlIhUyK0/https/raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/tsx.png"
+                },
+                "application_id": "782685898163617802"
+            }
+        ],
+        "active_on_discord_web": false,
+        "active_on_discord_mobile": false,
+        "active_on_discord_desktop": true
+    }
+}
