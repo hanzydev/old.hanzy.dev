@@ -1,9 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import {
-    type CodeActivity,
-    type LanyardResponse,
-    type Status,
-} from '@/types';
+import type { LanyardData, CodeActivity, Status } from '@/types';
 
 function resolveVSCActivityImage(raw: string) {
     const match = raw.match(
@@ -29,20 +24,10 @@ function resolveVSActivityImage(raw: string) {
     return null;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<LanyardResponse>) {
-    const data = await fetch(
-        `https://api.lanyard.rest/v1/users/${process.env.DISCORD_USER_ID}`,
-    ).then((res) => res.json());
+export default function resolveLanyardData(data: any): LanyardData {
+    const discordUser = data.discord_user;
 
-    if (!data.success) {
-        return res
-            .status(400)
-            .json({ ok: false, code: data.error.code, error: data.error.message });
-    }
-
-    const discordUser = data.data.discord_user;
-
-    const codeActivities = (data.data.activities as Record<string, any>[])
+    const codeActivities = (data.activities as Record<string, any>[])
         .filter(
             (activity) =>
                 activity.type === 0 &&
@@ -73,12 +58,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             };
         });
 
-    const discordStatus = data.data.discord_status as Status;
+    const discordStatus = data.discord_status as Status;
 
-    return res.status(200).json({
-        ok: true,
-        code: 'success',
-        custom_keys: data.data.kv,
+    return {
+        custom_keys: data.kv,
         discord_user: {
             username: discordUser.username,
             discriminator: discordUser.discriminator,
@@ -92,5 +75,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 : `https://cdn.discordapp.com/embed/avatars/${discordUser.discriminator % 5}.png`,
         },
         code_activities: codeActivities as CodeActivity[],
-    });
+    };
 }

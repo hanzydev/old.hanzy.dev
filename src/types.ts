@@ -21,20 +21,10 @@ export interface LanyardDiscordUserData {
 }
 
 export interface LanyardData {
-    code: string;
     custom_keys: Record<string, any>;
     discord_user: LanyardDiscordUserData;
     code_activities: CodeActivity[];
-    ok: true;
 }
-
-export interface LanyardErrorData {
-    error: string;
-    code: string;
-    ok: false;
-}
-
-export type LanyardResponse = LanyardData | LanyardErrorData;
 
 export interface License {
     name: string;
