@@ -9,19 +9,17 @@ function resolveVSCActivityImage(raw: string) {
         return `https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/${match[1]}${match[2]}`;
     }
 
-    return null;
+    return 'https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/idle.png';
 }
 
 function resolveVSActivityImage(raw: string) {
-    const match = raw.match(/File [\w]*(.*)/);
+    const extname = raw.split('.').pop();
 
-    if (match) {
-        return `https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/${match[1].slice(
-            1,
-        )}.png`;
+    if (extname) {
+        return `https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/${extname}.png`;
     }
 
-    return null;
+    return 'https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/idle.png';
 }
 
 export default function resolveLanyardData(data: any): LanyardData {
@@ -41,7 +39,10 @@ export default function resolveLanyardData(data: any): LanyardData {
                     activity.name === 'Code'
                         ? activity.state
                         : `Working on ${activity.details.replace(/File /g, '')}`,
-                details: activity.name === 'Code' ? activity.details : `In ${activity.state}`,
+                details:
+                    activity.name === 'Code'
+                        ? activity.details.split(' - ').shift()
+                        : `In ${activity.state}`,
                 start_timestamp: activity.timestamps.start,
                 assets: {
                     image:

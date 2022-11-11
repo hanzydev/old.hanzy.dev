@@ -14,7 +14,7 @@ export interface CodeActivity {
 export interface LanyardDiscordUserData {
     username: string;
     discriminator: string;
-    tag: string;
+    tag: `${string}#${string}`;
     id: string;
     avatar_url: string | null;
     status: Status;
