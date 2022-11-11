@@ -1,10 +1,10 @@
 import React from 'react';
 import type { CodeActivity } from '@/types';
-import Skeleton from './Skeleton';
 import { Grid, Text } from '@nextui-org/react';
 import dynamic from 'next/dynamic';
 
 const CodeActivity = dynamic(() => import('./CodeActivity'));
+const Skeleton = dynamic(() => import('./Skeleton'));
 
 type IProps = {
     activities?: CodeActivity[];
@@ -18,13 +18,7 @@ const CodeActivities: React.FC<IProps> = ({ activities }) => {
     const renderActivities = activities.length ? (
         activities.map((activity, i) => (
             <Grid xs={12} sm={6} md={4} lg={3} key={i}>
-                <CodeActivity
-                    assets={activity.assets}
-                    details={activity.details}
-                    name={activity.name}
-                    startTimestamp={activity.start_timestamp}
-                    state={activity.state}
-                />
+                <CodeActivity startTimestamp={activity.start_timestamp} {...activity} />
             </Grid>
         ))
     ) : (

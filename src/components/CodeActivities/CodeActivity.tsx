@@ -37,7 +37,7 @@ const CodeActivity: React.FC<IProps> = ({ assets, details, name, startTimestamp,
         }
 
         if (hours > 0) {
-             return `${parseTime(hours)}:${parseTime(minutes)} elapsed`;
+            return `${parseTime(hours)}:${parseTime(minutes)}:${parseTime(seconds)} elapsed`;
         }
 
         return `${parseTime(minutes)}:${parseTime(seconds)} elapsed`;

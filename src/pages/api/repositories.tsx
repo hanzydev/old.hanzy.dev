@@ -1,19 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { RepositoriesResponse } from '@/types';
+import type { Repository } from '@/types';
 
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<RepositoriesResponse>,
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Repository[]>) {
     const data = (await fetch(`https://api.github.com/users/${process.env.GITHUB_USERNAME}/repos`, {
         headers: {
             Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
     }).then((res) => res.json())) as Record<string, any>[];
 
-    return res.status(200).json({
-        ok: true,
-        repositories: data
+    return res.status(200).json(
+        data
             .filter((repo) => !repo.fork)
             .map((repo) => {
                 return {
@@ -32,5 +28,5 @@ export default async function handler(
                         : 'Not Licensed',
                 };
             }),
-    });
+    );
 }

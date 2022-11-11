@@ -41,8 +41,3 @@ export interface Repository {
     language: string;
     license: License | 'Not Licensed';
 }
-
-export interface RepositoriesResponse {
-    ok: boolean;
-    repositories: Repository[];
-}
