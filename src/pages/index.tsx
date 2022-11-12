@@ -5,11 +5,13 @@ import type { LanyardData, Repository, Technology } from '@/types';
 import { Text, Spacer } from '@nextui-org/react';
 import { Parallax } from 'react-scroll-parallax';
 import { FaGithub } from 'react-icons/fa';
+import { DISCORD_USER_ID } from '@/constants';
 
 const Profile = dynamic(() => import('@/components/Profile/Profile'));
 const CodeActivities = dynamic(() => import('@/components/CodeActivities/CodeActivities'));
 const Repositories = dynamic(() => import('@/components/Repositories/Repositories'));
 const Technologies = dynamic(() => import('@/components/Technologies/Technologies'));
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
 
 export default function Home() {
     const [data, setData] = React.useState<LanyardData>();
@@ -101,11 +103,11 @@ export default function Home() {
                     <CodeActivities activities={data?.code_activities} />
                 </div>
             </Parallax>
+            <Spacer y={3} />
+            <Footer />
         </div>
     );
 }
-
-const DISCORD_USER_ID = '931957993925378050';
 
 const TECHNOLOGIES: Technology[] = [
     {

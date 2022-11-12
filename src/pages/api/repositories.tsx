@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { Repository } from '@/types';
+import { GITHUB_USERNAME } from '@/constants';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Repository[]>) {
-    const data = (await fetch(`https://api.github.com/users/${process.env.GITHUB_USERNAME}/repos`, {
+    const data = (await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`, {
         headers: {
             Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         },
