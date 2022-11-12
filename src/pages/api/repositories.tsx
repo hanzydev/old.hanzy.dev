@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                 return {
                     name: repo.name,
                     url: repo.html_url,
-                    description: repo.description,
+                    description: repo.description || 'No description provided.',
                     stars: repo.stargazers_count,
                     forks: repo.forks_count,
                     language: repo.language,
