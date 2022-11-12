@@ -87,24 +87,37 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center h-[100vh] w-full container">
                 <Profile avatarURL={data?.discord_user?.avatar_url} tag={data?.discord_user?.tag} />
             </div>
-            <Parallax speed={25}>
+            
+            <Parallax speed={30}>
                 <div className="flex flex-col items-center justify-center h-[auto] w-full container">
                     <Text h1>Technologies I Use</Text>
                     <Technologies technologies={TECHNOLOGIES} />
                 </div>
-                <Spacer y={3} />
+            </Parallax>
+
+            <Spacer y={3} />
+
+            <Parallax speed={30}>
                 <div className="flex flex-col items-center justify-center h-[auto] w-full container">
                     <Text h1>Repositories</Text>
                     <Repositories repositories={repositories} />
                 </div>
-                <Spacer y={3} />
+            </Parallax>
+
+            <Spacer y={3} />
+
+            <Parallax speed={30}>
                 <div className="flex flex-col items-center justify-center h-[auto] w-full container">
                     <Text h1>Code Activities</Text>
                     <CodeActivities activities={data?.code_activities} />
                 </div>
             </Parallax>
+
             <Spacer y={3} />
-            <Footer />
+
+            <Parallax speed={30}>
+                <Footer />
+            </Parallax>
         </div>
     );
 }
