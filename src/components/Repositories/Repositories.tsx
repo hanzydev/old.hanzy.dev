@@ -28,7 +28,7 @@ const Repositories: React.FC<IProps> = ({ repositories }) => {
     const createPages = () => {
         const pages: Repository[][] = [];
 
-        let repoPerPage = 4;
+        let repoPerPage = 3;
         let k = repoPerPage;
 
         for (let i = 0; i < repositories.length; i += repoPerPage) {
@@ -52,7 +52,7 @@ const Repositories: React.FC<IProps> = ({ repositories }) => {
     };
 
     const renderRepositories = pages[currentPage].map((repository, i) => (
-        <Grid xs={12} sm={6} md={4} lg={3} key={i}>
+        <Grid xs={12} sm={8} md={4} lg={4} key={i}>
             <Repository {...repository} />
         </Grid>
     ));
