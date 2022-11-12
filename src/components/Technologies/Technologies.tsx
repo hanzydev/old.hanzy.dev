@@ -11,7 +11,7 @@ type IProps = {
 
 const Technologies: React.FC<IProps> = ({ technologies }) => {
     const renderTechnologies = technologies.map((technologie, i) => (
-        <Grid xs={6} sm={4} md={3} lg={2} key={i}>
+        <Grid xs={6} sm={4} md={3} lg={3} key={i}>
             <Technology {...technologie} />
         </Grid>
     ));

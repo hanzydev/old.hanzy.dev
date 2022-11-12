@@ -234,7 +234,7 @@ const TECHNOLOGIES: Technology[] = [
         icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/heroku/heroku-plain.svg',
     },
     {
-        name: 'Visual Studio Code',
+        name: 'VS Code',
         url: 'https://code.visualstudio.com/',
         icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg',
     },
