@@ -16,7 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                     name: repo.name,
                     url: repo.html_url,
                     description: repo.description,
-                    homepage: repo.homepage,
                     stars: repo.stargazers_count,
                     forks: repo.forks_count,
                     language: repo.language,

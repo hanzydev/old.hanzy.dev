@@ -35,7 +35,6 @@ export interface Repository {
     name: string;
     url: `https://github.com/${string}/${string}`;
     description: string;
-    homepage: string;
     stars: number;
     forks: number;
     language: string;
