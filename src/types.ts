@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type Status = 'online' | 'idle' | 'dnd' | 'offline';
 
 export interface CodeActivity {
@@ -39,4 +41,10 @@ export interface Repository {
     forks: number;
     language: string;
     license: License | 'Not Licensed';
+}
+
+export interface Technology {
+    name: string;
+    url: string;
+    icon: React.ReactNode;
 }
