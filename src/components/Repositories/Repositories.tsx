@@ -52,7 +52,7 @@ const Repositories: React.FC<IProps> = ({ repositories }) => {
     };
 
     const renderRepositories = pages[currentPage].map((repository, i) => (
-        <Grid xs={12} sm={8} md={4} lg={4} key={i}>
+        <Grid xs={12} sm={8} md={6} lg={12 / pages[currentPage].length} key={i}>
             <Repository {...repository} />
         </Grid>
     ));
