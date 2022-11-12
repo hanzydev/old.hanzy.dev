@@ -30,19 +30,22 @@ export default function resolveLanyardData(data: any): LanyardData {
             (activity) =>
                 activity.type === 0 &&
                 activity.state &&
-                ['Code', 'Visual Studio'].includes(activity.name),
+                ['Code', 'Visual Studio'].includes(activity.name) &&
+                activity.state !== 'No active solution' &&
+                activity.state !== 'No active file' &&
+                activity.assets.large_text,
         )
         .map((activity) => {
             return {
                 name: activity.name === 'Code' ? 'Visual Studio Code' : activity.name,
                 state:
                     activity.name === 'Code'
-                        ? activity.state
+                        ? activity.state.split(':').shift()
                         : `Working on ${activity.details.replace(/File /g, '')}`,
                 details:
                     activity.name === 'Code'
                         ? activity.details.split(' - ').shift()
-                        : `In ${activity.state}`,
+                        : `In ${activity.state.split('Solution').pop()}`,
                 start_timestamp: activity.timestamps.start,
                 assets: {
                     image:
@@ -51,10 +54,8 @@ export default function resolveLanyardData(data: any): LanyardData {
                             : resolveVSActivityImage(activity.details),
                     text:
                         activity.name === 'Code'
-                            ? activity.assets.large_text ?? activity.assets.small_text
-                            : activity.assets.large_text
-                            ? `Editing a ${activity.assets.large_text} file`
-                            : activity.assets.small_text,
+                            ? activity.assets.large_text
+                            : `Editing a ${activity.assets.large_text} file`,
                 },
             };
         });
