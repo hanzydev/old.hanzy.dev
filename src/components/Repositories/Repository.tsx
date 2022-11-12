@@ -3,7 +3,7 @@ import { Spacer, Card, Grid, Text, Link, Button, Tooltip } from '@nextui-org/rea
 import { Repository as RepositoryData } from '@/types';
 import { FaGithub } from 'react-icons/fa';
 import { AiFillStar, AiOutlineFork } from 'react-icons/ai';
-import { TbLicense } from 'react-icons/tb';
+import { TbLicense, TbLanguage } from 'react-icons/tb';
 
 const Repository: React.FC<RepositoryData> = ({
     name,
@@ -68,6 +68,8 @@ const Repository: React.FC<RepositoryData> = ({
                 <Spacer x={0.5} />
 
                 <Button auto size="xs" css={{ bg: '$accents3', ml: 'auto' }}>
+                    <TbLanguage size={16} />
+                    <Spacer x={0.2} />
                     {language}
                 </Button>
             </Card.Footer>
