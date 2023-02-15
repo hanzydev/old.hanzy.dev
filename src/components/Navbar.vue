@@ -30,7 +30,7 @@
             <a
                 href="https://discord.com/users/931957993925378050"
                 target="_blank"
-                class="pl-2.5 pr-[0.6rem] py-1.5 rounded-full bg-[#2564ebad] hover:bg-[#5865f2] transition-colors duration-300"
+                class="pl-2.5 pr-[0.6rem] py-1.5 rounded-full bg-[#5865f2] hover:bg-[#5865f2] transition-colors duration-300"
             >
                 <i class="bi bi-discord text-xl"></i>
             </a>
