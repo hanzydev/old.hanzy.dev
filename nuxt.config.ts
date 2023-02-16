@@ -13,7 +13,8 @@ export default defineNuxtConfig({
             meta: [
                 {
                     name: 'description',
-                    content: 'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
+                    content:
+                        'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
                 },
                 {
                     name: 'keywords',
@@ -24,8 +25,8 @@ export default defineNuxtConfig({
                     content: 'Deliever42',
                 },
                 {
-                    name: "theme-color",
-                    content: "#2563EB"
+                    name: 'theme-color',
+                    content: '#2563EB',
                 },
                 {
                     property: 'og:title',
@@ -33,10 +34,11 @@ export default defineNuxtConfig({
                 },
                 {
                     property: 'og:description',
-                    content: 'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
+                    content:
+                        'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
                 },
                 {
-                    property: 'og:image',
+                    property: 'og:image:url',
                     content: '/deliever.png',
                 },
                 {
