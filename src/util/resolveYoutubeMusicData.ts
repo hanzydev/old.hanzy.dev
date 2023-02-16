@@ -1,17 +1,4 @@
-export interface YoutubeMusicData {
-    song_name: string;
-    song_url: string;
-    song_image: string;
-    paused: boolean;
-    details: any;
-}
-
-export enum StatusColors {
-    online = '#40ac7a',
-    idle = '#ed9e19',
-    dnd = '#e44343',
-    offline = '#747f8d',
-}
+import type { YoutubeMusicData } from '../types';
 
 async function getSongDetails(songName: string): Promise<string | null> {
     const data = await fetch(`https://ytapi.deliever42.repl.co/search?q=${songName}`).then((res) =>

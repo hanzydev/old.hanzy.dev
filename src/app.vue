@@ -27,12 +27,11 @@ onMounted(() => {
     const cursor = document.getElementById('cursor') as HTMLDivElement;
     let seeing = false;
 
-    // Listeners
     document.body.addEventListener('mousemove', (e) => {
         {
             gsap.to(cursor, {
-                x: e.pageX - 15,
-                y: e.pageY - 15,
+                x: e.clientX,
+                y: e.clientY,
                 duration: seeing ? 0.2 : 0,
             });
         }

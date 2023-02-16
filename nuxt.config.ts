@@ -34,6 +34,10 @@ export default defineNuxtConfig({
                     href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css',
                 },
                 {
+                    rel: 'stylesheet',
+                    href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css',
+                },
+                {
                     rel: 'preconnect',
                     href: 'https://fonts.googleapis.com',
                 },

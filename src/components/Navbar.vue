@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="flex items-center p-3.5 border-b-[1px] border-b-[#ffffff05] justify-evenly fixed w-screen backdrop-blur-md"
+        class="flex items-center p-3.5 border-b-[1px] border-b-[#ffffff05] justify-evenly fixed w-screen backdrop-blur-sm z-50"
     >
         <p class="font-robotomono text-xl font-semibold select-none">deliever42</p>
         <div class="flex space-x-6 items-center">

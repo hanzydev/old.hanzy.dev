@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
-import { DiscordData } from './util/resolveDiscordData';
-import { YoutubeMusicData } from './util/resolveYoutubeMusicData';
+import type { DiscordData, YoutubeMusicData, GithubRepositoryData } from './types';
 
 export const useDiscord = defineStore({
     id: 'discord',
@@ -21,7 +20,7 @@ export const useYoutubeMusic = defineStore({
     state: () => ({
         data: null as YoutubeMusicData | null,
         dataReceived: false,
-        newDataReceived: false
+        newDataReceived: false,
     }),
     actions: {
         setData(data: YoutubeMusicData | null) {
@@ -30,6 +29,20 @@ export const useYoutubeMusic = defineStore({
         },
         setNewDataReceived(value: boolean) {
             this.newDataReceived = value;
-        }
+        },
+    },
+});
+
+export const useGithub = defineStore({
+    id: 'github',
+    state: () => ({
+        data: null as GithubRepositoryData[] | null,
+        dataReceived: false,
+    }),
+    actions: {
+        setData(data: GithubRepositoryData[]) {
+            this.data = data;
+            this.dataReceived = true;
+        },
     },
 });

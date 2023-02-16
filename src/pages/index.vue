@@ -31,9 +31,9 @@
                     <b class="text-white">UI designer</b>. I live in
                     <b class="text-white">Turkey</b>.
                 </p>
-                <div class="mt-3">
+                <div class="mt-2">
                     <div class="flex items-center" v-if="ytMusic.dataReceived">
-                        <i class="bi bi-music-note"></i>
+                        <i class="bi bi-music-note text-lg"></i>
                         <p class="ml-2 text-gray-300" v-if="!ytMusic.data">I listen to nothing.</p>
                         <p class="ml-2 text-gray-300" v-else>
                             I listen to
@@ -66,9 +66,10 @@
 </template>
 
 <script setup lang="ts">
-import { StatusColors, resolveDiscordData } from '../util/resolveDiscordData';
+import { resolveDiscordData } from '../util/resolveDiscordData';
 import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
+import { StatusColors } from '../types';
 
 const discord = useDiscord();
 const ytMusic = useYoutubeMusic();
