@@ -117,4 +117,16 @@ onMounted(() => {
     transform-origin: left;
     transform: scaleX(1);
 }
+
+::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: unset;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #181818;
+}
 </style>
