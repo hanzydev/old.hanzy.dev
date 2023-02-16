@@ -10,10 +10,10 @@ export interface DiscordData {
 }
 
 export enum StatusColors {
-    online = '#40ac7a',
-    idle = '#ed9e19',
+    online = '#3ba55c',
+    idle = '#faa61a',
     dnd = '#e44343',
-    offline = '#747f8d',
+    offline = '#747f8c',
 }
 
 export interface YoutubeMusicData {
