@@ -18,12 +18,16 @@
                 </a>
             </a>
             <div>
-                <h1 class="font-robotomono font-bold">{{ discord.data!.user.tag }}</h1>
-                <p>
-                    Hi! My name is <b>Emirhan</b>, I am a <b>Full-Stack Developer</b> and
-                    <b>UI designer</b>. I live in <b>Turkey</b>.
+                <h1 class="font-robotomono font-bold">
+                    {{ discord.data!.user.username }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
+                </h1>
+                <p class="text-gray-300">
+                    Hi! My name is <b class="text-white">Emirhan</b>, I am a
+                    <b class="text-white">Full-Stack Developer</b> and
+                    <b class="text-white">UI designer</b>. I live in
+                    <b class="text-white">Turkey</b>.
                 </p>
-                <div class="mt-2">
+                <div class="mt-3">
                     <div class="flex items-center" v-if="ytMusic.dataReceived">
                         <i class="bi bi-music-note"></i>
                         <p class="ml-2 text-gray-300" v-if="!ytMusic.data">I listen to nothing.</p>

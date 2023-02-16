@@ -3,14 +3,84 @@
         class="fixed top-0 left-0 bottom-0 right-0 z-[-1] bg-no-repeat scale-[2] rotate-[135deg]"
         id="background-gradient"
     ></div>
+    <div class="pointer-events-none">
+        <div id="cursor" class="fixed opacity-0 z-[9999]">
+            <svg height="24" width="24">
+                <circle cx="12" cy="12" r="12" stroke-width="0" fill="#2564eb1e"></circle>
+            </svg>
+        </div>
+    </div>
+
     <NuxtPage />
 </template>
 
 <script setup lang="ts">
 import { useBodyAttrs } from '@unhead/vue';
+import gsap from 'gsap';
+import { useDiscord } from './store';
 
 useBodyAttrs({
     class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium',
+});
+
+onMounted(() => {
+    const cursor = document.getElementById('cursor') as HTMLDivElement;
+    let seeing = false;
+
+    // Listeners
+    document.body.addEventListener('mousemove', (e) => {
+        {
+            gsap.to(cursor, {
+                x: e.pageX - 15,
+                y: e.pageY - 15,
+                duration: seeing ? 0.2 : 0,
+            });
+        }
+    });
+
+    document.body.addEventListener('mouseleave', () => {
+        gsap.to(cursor, {
+            opacity: 0,
+            duration: 0.2,
+            onComplete: () => {
+                seeing = false;
+            },
+        });
+    });
+
+    document.body.addEventListener('mouseenter', () => {
+        gsap.to(cursor, {
+            opacity: 1,
+            duration: 0.2,
+            onComplete: () => {
+                seeing = true;
+            },
+        });
+    });
+
+    const discord = useDiscord();
+
+    watchEffect(() => {
+        if (discord.dataReceived) {
+            const aTags = document.querySelectorAll('a');
+
+            for (const a of aTags) {
+                a.addEventListener('mouseenter', () => {
+                    gsap.to(cursor, {
+                        scale: 2,
+                        duration: 0.2,
+                    });
+                });
+
+                a.addEventListener('mouseleave', () => {
+                    gsap.to(cursor, {
+                        scale: 1,
+                        duration: 0.2,
+                    });
+                });
+            }
+        }
+    });
 });
 </script>
 

@@ -1,6 +1,8 @@
 export interface DiscordData {
     status: 'online' | 'idle' | 'dnd' | 'offline';
     user: {
+        username: string;
+        discriminator: string;
         tag: `${string}#${string}`;
         id: string;
         avatar_url: `https://cdn.discordapp.com/avatars/${string}/${string}.${'png' | 'gif'}`;
@@ -18,6 +20,8 @@ export async function resolveDiscordData(data: any): Promise<DiscordData> {
     return {
         status: data.discord_status,
         user: {
+            username: data.discord_user.username,
+            discriminator: data.discord_user.discriminator,
             tag: data.discord_user.username + '#' + data.discord_user.discriminator,
             id: data.discord_user.id,
             avatar_url: `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${
