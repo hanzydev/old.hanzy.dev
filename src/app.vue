@@ -11,10 +11,7 @@
         </div>
     </div>
     <Navbar />
-    <div>
-        <NuxtPage />
-        <Footer />
-    </div>
+    <NuxtPage />
 </template>
 
 <script setup lang="ts">
@@ -105,7 +102,7 @@ onMounted(() => {
     content: '';
     position: absolute;
     width: 100%;
-    height: 1.5px;
+    height: 2px;
     border-radius: 4px;
     background-color: #fff;
     bottom: 0;
@@ -126,14 +123,7 @@ onMounted(() => {
 }
 
 ::-webkit-scrollbar {
-    width: 0.4rem;
-}
-
-::-webkit-scrollbar-track {
-    background-color: unset;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #181818;
+    width: 0;
+    height: 0;
 }
 </style>

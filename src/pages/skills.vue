@@ -1,6 +1,6 @@
 <template>
     <div class="lg:pt-8"></div>
-    <div class="flex h-full pt-[52px] md:pt-[68px] px-6 md:px-48 items-center justify-center mb-16">
+    <div class="flex h-full pt-[52px] md:pt-[68px] px-6 md:px-48 items-center justify-center mb-8">
         <div class="space-y-3 w-screen xl:w-3/4 2xl:w-2/4 pt-6">
             <div v-for="skill in skills" class="flex flex-col space-y-1">
                 <div class="flex">
@@ -24,6 +24,7 @@
             </div>
         </div>
     </div>
+    <Footer />
 </template>
 
 <script setup lang="ts">

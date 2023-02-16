@@ -1,7 +1,7 @@
 <template>
     <div class="pt-8 lg:pt-16"></div>
     <div
-        class="flex h-full pt-[52px] md:pt-[68px] items-center justify-center px-48 mb-16"
+        class="flex h-full pt-[52px] md:pt-[68px] items-center justify-center px-48 mb-8"
         v-if="github.dataReceived"
     >
         <div class="grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center justify-center">
@@ -60,6 +60,7 @@
     <div class="flex items-center justify-center h-screen" v-else>
         <Spinner size="xl" />
     </div>
+    <Footer />
 </template>
 
 <script setup lang="ts">

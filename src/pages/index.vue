@@ -1,76 +1,99 @@
 <template>
-    <div v-if="discord.dataReceived">
-        <div
-            class="flex h-screen pt-[52px] md:pt-[68px] max-xl:text-center max-xl:flex-col items-center justify-center xl:space-x-24 px-6"
-        >
-            <a
-                :href="`https://discord.com/users/${discord.data!.user.id}`"
-                target="_blank"
-                class="relative opacity-0"
-                id="profile"
+    <div id="main">
+        <div v-if="discord.dataReceived">
+            <div
+                class="flex h-screen pt-[52px] md:pt-[68px] max-xl:text-center max-xl:flex-col items-center justify-center xl:space-x-24 px-6"
             >
-                <img
-                    :src="discord.data!.user.avatar_url"
-                    class="w-52 h-52 rounded-full"
-                    draggable="false"
-                />
-                <a class="top-[10rem] left-[10rem] absolute bg-[#131b2b] p-2 rounded-full z-20">
-                    <div
-                        class="w-6 h-6 rounded-full"
-                        :style="{
-                            backgroundColor: StatusColors[discord.data!.status]
-                        }"
-                    ></div>
+                <a
+                    :href="`https://discord.com/users/${discord.data!.user.id}`"
+                    target="_blank"
+                    class="relative opacity-0"
+                    id="profile"
+                >
+                    <img
+                        :src="discord.data!.user.avatar_url"
+                        class="w-52 h-52 rounded-full"
+                        draggable="false"
+                    />
+                    <a class="top-[10rem] left-[10rem] absolute bg-[#131b2b] p-2 rounded-full z-20">
+                        <div
+                            class="w-6 h-6 rounded-full"
+                            :style="{
+                                backgroundColor: StatusColors[discord.data!.status]
+                            }"
+                        ></div>
+                    </a>
                 </a>
-            </a>
-            <div>
-                <h1 class="font-robotomono font-bold opacity-0" id="name">
-                    {{ discord.data!.user.username
-                    }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
-                </h1>
-                <p class="text-gray-300 opacity-0" id="about">
-                    Hi! My name is <b class="text-white">Emirhan</b>, I am a
-                    <b class="text-white">Full-Stack Developer</b> and
-                    <b class="text-white">UI designer</b>. I live in
-                    <b class="text-white">Turkey</b>.
-                </p>
-                <div class="mt-4 opacity-0" id="listening">
-                    <div
-                        class="flex items-center max-xl:justify-center"
-                        v-if="ytMusic.dataReceived"
-                    >
-                        <i class="bi bi-music-note text-lg"></i>
-                        <p class="ml-2 text-gray-300" v-if="!ytMusic.data">
-                            Currently not listening to anything.
-                        </p>
-                        <p class="ml-2 text-gray-300" v-else>
-                            Listening to
-                            <b
-                                ><a
-                                    :href="`https://youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
-                                    target="_blank"
+                <div>
+                    <h1 class="font-robotomono font-bold opacity-0" id="name">
+                        {{ discord.data!.user.username
+                        }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
+                    </h1>
+                    <p class="text-gray-300 opacity-0" id="about">
+                        Hi! My name is <b class="text-white">Emirhan</b>, I am a
+                        <b class="text-white">Full-Stack Developer</b> and
+                        <b class="text-white">UI designer</b>. I live in
+                        <b class="text-white">Turkey</b>.
+                    </p>
+                    <div class="mt-4 opacity-0" id="listening">
+                        <div
+                            class="flex items-center max-xl:justify-center"
+                            v-if="ytMusic.dataReceived"
+                        >
+                            <i class="bi bi-music-note text-lg"></i>
+                            <p class="ml-2 text-gray-300" v-if="!ytMusic.data">
+                                Currently not listening to anything.
+                            </p>
+                            <p class="ml-2 text-gray-300" v-else>
+                                Listening to
+                                <b
+                                    ><a
+                                        :href="`https://youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
+                                        target="_blank"
+                                    >
+                                        {{
+                                            ytMusic.data?.song_name?.length > 60
+                                                ? ytMusic.data?.song_name?.slice(0, 57) + ' ...'
+                                                : ytMusic.data?.song_name
+                                        }}
+                                    </a></b
                                 >
-                                    {{
-                                        ytMusic.data?.song_name?.length > 60
-                                            ? ytMusic.data?.song_name?.slice(0, 57) + ' ...'
-                                            : ytMusic.data?.song_name
-                                    }}
-                                </a></b
-                            >
-                        </p>
+                            </p>
 
-                        <Spinner class="ml-4" size="xs" v-if="ytMusic.newDataReceived" />
-                    </div>
-                    <div class="max-xl:flex max-xl:justify-center" v-else>
-                        <Spinner size="sm" />
+                            <Spinner class="ml-4" size="xs" v-if="ytMusic.newDataReceived" />
+                        </div>
+                        <div class="max-xl:flex max-xl:justify-center" v-else>
+                            <Spinner size="sm" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="flex items-center justify-center h-screen" v-else>
+            <Spinner size="xl" />
+        </div>
     </div>
-    <div class="flex items-center justify-center h-screen" v-else>
-        <Spinner size="xl" />
+    <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
+        <div
+            class="h-36 w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono"
+            style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+            <div class="flex flex-col">
+                <p class="font-semibold text-md">
+                    Do not forget it; The greatest war is the war against ignorance and reaction.
+                </p>
+                <a
+                    class="mt-auto font-bold text-lg font-robotomono"
+                    href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
+                    target="_blank"
+                    ><span class="link">> Mustafa Kemal Atatürk</span></a
+                >
+            </div>
+            <i class="bi bi-info-circle text-7xl opacity-5 ml-auto my-auto"></i>
+        </div>
+        <Footer class="pt-12" />
     </div>
+    <Footer class="hidden max-xl:block" />
 </template>
 
 <script setup lang="ts">
@@ -79,6 +102,35 @@ import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+onMounted(() => {
+    const goToSection = (height: number) => {
+        gsap.to(window, {
+            scrollTo: { y: height, autoKill: false },
+            duration: 1,
+            overwrite: true,
+            ease: 'circ.inOut',
+        });
+    };
+
+    ScrollTrigger.create({
+        trigger: '#main',
+        start: 'top bottom',
+        end: '+=200%',
+        onToggle: (self) => self.isActive && goToSection(0),
+    });
+
+    ScrollTrigger.create({
+        trigger: '#footer',
+        start: 'top bottom',
+        end: '+=200%',
+        onToggle: (self) => self.isActive && goToSection(innerHeight),
+    });
+});
 
 const discord = useDiscord();
 const ytMusic = useYoutubeMusic();
