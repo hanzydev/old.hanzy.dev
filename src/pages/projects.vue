@@ -6,7 +6,7 @@
         <div class="grid grid-cols-3 gap-4 items-center justify-center">
             <a
                 v-for="repository in github.data"
-                class="flex flex-col backdrop-blur-md p-4 rounded-lg shadow-lg h-36 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-700 transition-all duration-300"
+                class="repository opacity-0 flex flex-col backdrop-blur-md p-4 rounded-lg shadow-lg h-36 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-700 transition-all duration-300"
                 style="background-color: rgba(0, 0, 0, 0.2)"
                 :href="repository.url"
                 target="_blank"
@@ -63,6 +63,7 @@
 
 <script setup lang="ts">
 import { useGithub } from '../store';
+import gsap from 'gsap';
 
 const github = useGithub();
 
@@ -71,6 +72,10 @@ onMounted(async () => {
     const repositories = Array.from(data.value!);
 
     github.setData(repositories);
+
+    nextTick(() => {
+        gsap.fromTo('.repository', { y: 20 }, { opacity: 1, y: 0, duration: 0.2, stagger: 0.05 });
+    });
 });
 
 useHead({
