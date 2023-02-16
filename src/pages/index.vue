@@ -116,12 +116,16 @@ const hasMobile = window.innerWidth < 768;
 onMounted(() => {
     if (!hasMobile) {
         const goToSection = (height: number) => {
-            gsap.to(window, {
-                scrollTo: { y: height, autoKill: false },
-                duration: 1,
-                overwrite: true,
-                ease: 'circ.inOut',
-            });
+            const route = useRoute();
+
+            if (route.path === '/') {
+                gsap.to(window, {
+                    scrollTo: { y: height, autoKill: false },
+                    duration: 1,
+                    overwrite: true,
+                    ease: 'circ.inOut',
+                });
+            }
         };
 
         ScrollTrigger.create({
