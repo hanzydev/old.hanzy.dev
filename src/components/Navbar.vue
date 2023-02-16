@@ -5,11 +5,9 @@
         <p class="font-robotomono text-xl font-semibold select-none">deliever42</p>
         <div class="flex space-x-4 items-center">
             <RouterLink to="/" class="font-robotomono text-lg nav-link">Home</RouterLink>
-            <a href="#" class="font-robotomono text-lg nav-link" @click="scrollView('skills')"
-                >Skills</a
-            >
-            <a href="#" class="font-robotomono text-lg nav-link" @click="scrollView('projects')"
-                >Projects</a
+            <RouterLink to="/skills" class="font-robotomono text-lg nav-link">Skills</RouterLink>
+            <RouterLink to="/projects" class="font-robotomono text-lg nav-link"
+                >Projects</RouterLink
             >
         </div>
         <div class="flex space-x-2 items-center">
@@ -30,20 +28,10 @@
             <a
                 href="https://discord.com/users/931957993925378050"
                 target="_blank"
-                class="pl-2.5 pr-[0.6rem] py-1.5 rounded-full bg-[#5865f2] hover:bg-[#5865f2] transition-colors duration-300"
+                class="pl-2.5 pr-[0.6rem] py-1.5 rounded-full bg-[#2564ebad] hover:bg-[#5865f2] transition-colors duration-300"
             >
                 <i class="bi bi-discord text-xl"></i>
             </a>
         </div>
     </nav>
 </template>
-
-<script setup lang="ts">
-const scrollView = (id: string) => {
-    const element = document.getElementById(id);
-
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-};
-</script>
