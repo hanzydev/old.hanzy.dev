@@ -1,6 +1,6 @@
 import type { YoutubeMusicData } from '../types';
 
-async function getSongDetails(songName: string): Promise<string | null> {
+async function getSongDetails(songName: string): Promise<any> {
     const data = await fetch(`https://ytapi.deliever42.repl.co/search?q=${songName}`).then((res) =>
         res.json(),
     );

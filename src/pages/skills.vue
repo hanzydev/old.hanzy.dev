@@ -1,6 +1,7 @@
 <template>
-    <div class="flex h-screen px-48 pt-12 items-center justify-center">
-        <div class="space-y-3 w-2/4">
+    <div class="lg:pt-16"></div>
+    <div class="flex h-full pt-[52px] md:pt-[68px] px-6 md:px-48 items-center justify-center mb-16">
+        <div class="space-y-3 w-screen xl:w-3/4 2xl:w-2/4 pt-6">
             <div v-for="skill in skills" class="flex flex-col space-y-1">
                 <div class="flex">
                     <p class="text-gray-300">{{ skill.name }}</p>

@@ -20,7 +20,7 @@ import gsap from 'gsap';
 import { useDiscord } from './store';
 
 useBodyAttrs({
-    class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium',
+    class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium overflow-x-hidden',
 });
 
 onMounted(() => {

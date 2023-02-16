@@ -1,9 +1,10 @@
 <template>
+    <div class="pt-8 lg:pt-16"></div>
     <div
-        class="flex h-screen items-center justify-center px-48 pt-96 mb-80"
+        class="flex h-full pt-[52px] md:pt-[68px] items-center justify-center px-48 mb-16"
         v-if="github.dataReceived"
     >
-        <div class="grid grid-cols-3 gap-4 items-center justify-center">
+        <div class="grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center justify-center">
             <a
                 v-for="repository in github.data"
                 class="repository opacity-0 flex flex-col backdrop-blur-md p-4 rounded-lg shadow-lg h-36 hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-700 transition-all duration-300"

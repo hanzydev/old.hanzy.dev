@@ -1,6 +1,9 @@
 <template>
     <div v-if="discord.dataReceived">
-        <div class="flex h-screen w-screen pt-12 items-center justify-center space-x-24">
+        <div class="lg:pt-16"></div>
+        <div
+            class="flex h-full pt-[52px] md:pt-[68px] max-xl:text-center max-xl:flex-col w-screen absolute top-0 left-0 items-center justify-center xl:space-x-24 px-6"
+        >
             <a
                 :href="`https://discord.com/users/${discord.data!.user.id}`"
                 target="_blank"
@@ -33,7 +36,10 @@
                     <b class="text-white">Turkey</b>.
                 </p>
                 <div class="mt-4 opacity-0" id="listening">
-                    <div class="flex items-center" v-if="ytMusic.dataReceived">
+                    <div
+                        class="flex items-center max-xl:justify-center"
+                        v-if="ytMusic.dataReceived"
+                    >
                         <i class="bi bi-music-note text-lg"></i>
                         <p class="ml-2 text-gray-300" v-if="!ytMusic.data">
                             Currently not listening to anything.
@@ -56,7 +62,7 @@
 
                         <Spinner class="ml-4" size="xs" v-if="ytMusic.newDataReceived" />
                     </div>
-                    <div v-else>
+                    <div class="max-xl:flex max-xl:justify-center" v-else>
                         <Spinner size="sm" />
                     </div>
                 </div>
@@ -159,6 +165,8 @@ connect();
 watchEffect(() => {
     if (discord.dataReceived) {
         nextTick(() => {
+            const hasMobile = window.innerWidth < 768;
+
             gsap.fromTo(
                 '#profile',
                 {
@@ -176,7 +184,7 @@ watchEffect(() => {
                 '#name',
                 {
                     opacity: 0,
-                    x: 50,
+                    x: hasMobile ? 15 : 50,
                 },
                 {
                     opacity: 1,
