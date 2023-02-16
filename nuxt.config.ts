@@ -13,11 +13,11 @@ export default defineNuxtConfig({
             meta: [
                 {
                     name: 'description',
-                    content: 'Hello! My name is Emirhan and I living in Turkey.',
+                    content: 'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
                 },
                 {
                     name: 'keywords',
-                    content: 'deliever42, emirhan77, deliever, emirhan, addox',
+                    content: 'deliever42, deliever, emirhan',
                 },
                 {
                     name: 'author',

@@ -33,7 +33,11 @@
                         Hi! My name is <b class="text-white">Emirhan</b>, I am a
                         <b class="text-white">Full-Stack Developer</b> and
                         <b class="text-white">UI designer</b>. I live in
-                        <b class="text-white">Turkey</b>.
+                        <b class="text-white"
+                            ><a href="https://en.wikipedia.org/wiki/Turkey" target="_blank"
+                                >Turkey</a
+                            ></b
+                        >.
                     </p>
                     <div class="mt-4 opacity-0" id="listening">
                         <div
@@ -107,29 +111,33 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+const hasMobile = window.innerWidth < 768;
+
 onMounted(() => {
-    const goToSection = (height: number) => {
-        gsap.to(window, {
-            scrollTo: { y: height, autoKill: false },
-            duration: 1,
-            overwrite: true,
-            ease: 'circ.inOut',
+    if (!hasMobile) {
+        const goToSection = (height: number) => {
+            gsap.to(window, {
+                scrollTo: { y: height, autoKill: false },
+                duration: 1,
+                overwrite: true,
+                ease: 'circ.inOut',
+            });
+        };
+
+        ScrollTrigger.create({
+            trigger: '#main',
+            start: 'top bottom',
+            end: '+=200%',
+            onToggle: (self) => self.isActive && goToSection(0),
         });
-    };
 
-    ScrollTrigger.create({
-        trigger: '#main',
-        start: 'top bottom',
-        end: '+=200%',
-        onToggle: (self) => self.isActive && goToSection(0),
-    });
-
-    ScrollTrigger.create({
-        trigger: '#footer',
-        start: 'top bottom',
-        end: '+=200%',
-        onToggle: (self) => self.isActive && goToSection(innerHeight),
-    });
+        ScrollTrigger.create({
+            trigger: '#footer',
+            start: 'top bottom',
+            end: '+=200%',
+            onToggle: (self) => self.isActive && goToSection(innerHeight),
+        });
+    }
 });
 
 const discord = useDiscord();
@@ -216,8 +224,6 @@ connect();
 watchEffect(() => {
     if (discord.dataReceived) {
         nextTick(() => {
-            const hasMobile = window.innerWidth < 768;
-
             gsap.fromTo(
                 '#profile',
                 {

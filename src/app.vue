@@ -124,6 +124,17 @@ onMounted(() => {
 
 ::-webkit-scrollbar {
     width: 0;
-    height: 0;
+}
+
+@media not all and (min-width: 1280px) {
+    ::-webkit-scrollbar {
+        width: 0.4rem;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: unset;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #191919;
+    }
 }
 </style>
