@@ -23,6 +23,26 @@ export default defineNuxtConfig({
                     name: 'author',
                     content: 'Deliever42',
                 },
+                {
+                    name: "theme-color",
+                    content: "#2563EB"
+                },
+                {
+                    property: 'og:title',
+                    content: 'Deliever42',
+                },
+                {
+                    property: 'og:description',
+                    content: 'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
+                },
+                {
+                    property: 'og:image',
+                    content: '/deliever.png',
+                },
+                {
+                    property: 'og:url',
+                    content: 'https://deliever42.me',
+                },
             ],
             link: [
                 {
