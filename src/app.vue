@@ -10,7 +10,7 @@
             </svg>
         </div>
     </div>
-
+    <Navbar />
     <NuxtPage />
 </template>
 

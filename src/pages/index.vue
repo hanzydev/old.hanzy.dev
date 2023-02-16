@@ -1,5 +1,4 @@
 <template>
-    <Navbar />
     <div v-if="discord.dataReceived">
         <div class="flex h-screen w-screen pt-12 items-center justify-center space-x-24">
             <a
@@ -7,19 +6,24 @@
                 target="_blank"
                 class="relative"
             >
-                <img :src="discord.data!.user.avatar_url" class="w-52 h-52 rounded-full" />
+                <img
+                    :src="discord.data!.user.avatar_url"
+                    class="w-52 h-52 rounded-full"
+                    draggable="false"
+                />
                 <a class="top-[10rem] left-[10rem] absolute bg-[#131b2b] p-2 rounded-full z-20">
                     <div
                         class="w-6 h-6 rounded-full"
                         :style="{
-                            backgroundColor: StatusColors[discord.data!.status],
+                            backgroundColor: StatusColors[discord.data!.status]
                         }"
                     ></div>
                 </a>
             </a>
             <div>
                 <h1 class="font-robotomono font-bold">
-                    {{ discord.data!.user.username }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
+                    {{ discord.data!.user.username
+                    }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                 </h1>
                 <p class="text-gray-300">
                     Hi! My name is <b class="text-white">Emirhan</b>, I am a
@@ -146,4 +150,8 @@ const connect = () => {
 };
 
 connect();
+
+useHead({
+    title: 'Deliever42 - Home',
+});
 </script>
