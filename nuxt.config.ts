@@ -38,7 +38,7 @@ export default defineNuxtConfig({
                         'Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey.',
                 },
                 {
-                    property: 'og:image:url',
+                    property: 'og:image',
                     content: '/deliever.png',
                 },
                 {
