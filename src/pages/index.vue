@@ -75,7 +75,7 @@
     </div>
     <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
         <div
-            class="h-36 w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono"
+            class="h-36 w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
             style="background-color: rgba(0, 0, 0, 0.2)"
         >
             <div class="flex flex-col">
