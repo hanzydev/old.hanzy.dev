@@ -1,8 +1,7 @@
 <template>
     <div v-if="discord.dataReceived">
-        <div class="lg:pt-16"></div>
         <div
-            class="flex h-full pt-[52px] md:pt-[68px] max-xl:text-center max-xl:flex-col w-screen absolute top-0 left-0 items-center justify-center xl:space-x-24 px-6"
+            class="flex h-screen pt-[52px] md:pt-[68px] max-xl:text-center max-xl:flex-col items-center justify-center xl:space-x-24 px-6"
         >
             <a
                 :href="`https://discord.com/users/${discord.data!.user.id}`"

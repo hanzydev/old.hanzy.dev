@@ -11,7 +11,10 @@
         </div>
     </div>
     <Navbar />
-    <NuxtPage />
+    <div>
+        <NuxtPage />
+        <Footer />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -94,11 +97,11 @@ onMounted(() => {
     font-family: 'Roboto Mono', monospace;
 }
 
-.nav-link {
+.link {
     position: relative;
 }
 
-.nav-link::before {
+.link::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -113,7 +116,11 @@ onMounted(() => {
     transition: transform 0.3s ease-in-out;
 }
 
-.nav-link:hover::before {
+.link-blue::before {
+    background-color: rgb(37 99 235);
+}
+
+.link:hover::before {
     transform-origin: left;
     transform: scaleX(1);
 }

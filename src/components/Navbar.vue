@@ -4,13 +4,13 @@
     >
         <p class="font-robotomono text-xl font-semibold select-none max-md:text-base">deliever42</p>
         <div class="flex space-x-6 max-md:space-x-4 items-center max-md:ml-auto">
-            <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm nav-link"
+            <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm link"
                 >Home</RouterLink
             >
-            <RouterLink to="/skills" class="font-robotomono text-lg max-md:text-sm nav-link"
+            <RouterLink to="/skills" class="font-robotomono text-lg max-md:text-sm link"
                 >Skills</RouterLink
             >
-            <RouterLink to="/projects" class="font-robotomono text-lg max-md:text-sm nav-link"
+            <RouterLink to="/projects" class="font-robotomono text-lg max-md:text-sm link"
                 >Projects</RouterLink
             >
         </div>
@@ -24,7 +24,6 @@
             </a>
             <a
                 href="mailto:contact@deliever42.me"
-                target="_blank"
                 class="pl-2.5 pr-[0.6rem] py-1.5 rounded-full bg-[#2564ebad] hover:bg-[#33a350] transition-colors duration-300"
             >
                 <i class="bi bi-envelope-fill text-xl"></i>
