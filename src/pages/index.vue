@@ -4,7 +4,8 @@
             <a
                 :href="`https://discord.com/users/${discord.data!.user.id}`"
                 target="_blank"
-                class="relative"
+                class="relative opacity-0"
+                id="profile"
             >
                 <img
                     :src="discord.data!.user.avatar_url"
@@ -21,22 +22,24 @@
                 </a>
             </a>
             <div>
-                <h1 class="font-robotomono font-bold">
+                <h1 class="font-robotomono font-bold opacity-0" id="name">
                     {{ discord.data!.user.username
                     }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                 </h1>
-                <p class="text-gray-300">
+                <p class="text-gray-300 opacity-0" id="about">
                     Hi! My name is <b class="text-white">Emirhan</b>, I am a
                     <b class="text-white">Full-Stack Developer</b> and
                     <b class="text-white">UI designer</b>. I live in
                     <b class="text-white">Turkey</b>.
                 </p>
-                <div class="mt-2">
+                <div class="mt-4 opacity-0" id="listening">
                     <div class="flex items-center" v-if="ytMusic.dataReceived">
                         <i class="bi bi-music-note text-lg"></i>
-                        <p class="ml-2 text-gray-300" v-if="!ytMusic.data">I listen to nothing.</p>
+                        <p class="ml-2 text-gray-300" v-if="!ytMusic.data">
+                            Currently not listening to anything.
+                        </p>
                         <p class="ml-2 text-gray-300" v-else>
-                            I listen to
+                            Listening to
                             <b
                                 ><a
                                     :href="`https://youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
@@ -70,6 +73,7 @@ import { resolveDiscordData } from '../util/resolveDiscordData';
 import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
+import gsap from 'gsap';
 
 const discord = useDiscord();
 const ytMusic = useYoutubeMusic();
@@ -151,6 +155,66 @@ const connect = () => {
 };
 
 connect();
+
+watchEffect(() => {
+    if (discord.dataReceived) {
+        nextTick(() => {
+            gsap.fromTo(
+                '#profile',
+                {
+                    opacity: 0,
+                    y: 50,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                },
+            );
+
+            gsap.fromTo(
+                '#name',
+                {
+                    opacity: 0,
+                    x: 50,
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                },
+            );
+
+            gsap.fromTo(
+                '#about',
+                {
+                    opacity: 0,
+                    y: -50,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    delay: 0.25,
+                },
+            );
+
+            gsap.fromTo(
+                '#listening',
+                {
+                    opacity: 0,
+                    y: -50,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    delay: 0.5,
+                },
+            );
+        });
+    }
+});
 
 useHead({
     title: 'Deliever42 - Home',
