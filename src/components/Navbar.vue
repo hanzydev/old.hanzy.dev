@@ -3,7 +3,7 @@
         class="flex items-center p-3.5 border-b-[1px] border-b-[#ffffff05] justify-evenly fixed w-screen backdrop-blur-md"
     >
         <p class="font-robotomono text-xl font-semibold select-none">deliever42</p>
-        <div class="flex space-x-4 items-center">
+        <div class="flex space-x-6 items-center">
             <RouterLink to="/" class="font-robotomono text-lg nav-link">Home</RouterLink>
             <RouterLink to="/skills" class="font-robotomono text-lg nav-link">Skills</RouterLink>
             <RouterLink to="/projects" class="font-robotomono text-lg nav-link"
