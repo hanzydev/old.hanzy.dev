@@ -30,8 +30,8 @@ onMounted(() => {
     document.body.addEventListener('mousemove', (e) => {
         {
             gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
+                x: e.clientX - 10,
+                y: e.clientY - 10,
                 duration: seeing ? 0.2 : 0,
             });
         }
