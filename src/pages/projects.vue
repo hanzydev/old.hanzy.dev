@@ -72,10 +72,18 @@ onMounted(async () => {
     const repositories = Array.from(data.value!);
 
     github.setData(repositories);
+});
 
-    nextTick(() => {
-        gsap.fromTo('.repository', { y: 20 }, { opacity: 1, y: 0, duration: 0.2, stagger: 0.05 });
-    });
+watchEffect(() => {
+    if (github.dataReceived) {
+        nextTick(() => {
+            gsap.fromTo(
+                '.repository',
+                { y: 20 },
+                { opacity: 1, y: 0, duration: 0.2, stagger: 0.05 },
+            );
+        });
+    }
 });
 
 useHead({
