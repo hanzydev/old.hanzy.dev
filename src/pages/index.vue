@@ -179,7 +179,10 @@ const connect = () => {
 
                 discord.setData(await resolveDiscordData(d));
                 const ytMusicActivity = d.activities.find(
-                    (activity: any) => activity.name === 'YouTube Music' && activity.state,
+                    (activity: any) =>
+                        activity.name === 'YouTube Music' &&
+                        activity.state &&
+                        activity.buttons.includes('Listen Along'),
                 );
 
                 if (!ytMusic.newDataReceived) {
