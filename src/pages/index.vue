@@ -1,7 +1,7 @@
 <template>
     <div className="fixed h-screen w-screen z-[9999] top-0 left-0 hidden" id="jumpscare-container">
         <video
-            src="https://dev-c82e1r1n0-deliever42.vercel.app/video.mp4"
+            :src="jumpscareVideo"
             loop
             className="h-full w-full object-cover"
             id="jumpscare"
@@ -38,8 +38,9 @@
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
                     <p class="text-gray-300 opacity-0" id="about">
-                        Hi! My name is <b class="text-white select-none" @click="showJumpscare">Emirhan</b>, I
-                        am a <b class="text-white">Full-Stack Developer</b> and
+                        Hi! My name is
+                        <b class="text-white select-none" @click="showJumpscare">Emirhan</b>, I am a
+                        <b class="text-white">Full-Stack Developer</b> and
                         <b class="text-white">UI designer</b>. I live in
                         <b class="text-white"
                             ><a href="https://en.wikipedia.org/wiki/Turkey" target="_blank"
@@ -89,12 +90,12 @@
         <div
             class="w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
             style="background-color: rgba(0, 0, 0, 0.05)"
-            id="footer-content"
         >
             <div class="flex flex-col">
                 <p class="font-semibold text-md break-words">
                     {{ randomQuote }}
                 </p>
+                <br />
                 <a
                     class="mt-auto font-bold text-lg font-robotomono"
                     href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
@@ -116,6 +117,7 @@ import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
 import AtaturkQuotes from '../data/ataturk_quotes.json';
 import Config from '../data/config.json';
+import SwearWords from '../data/swear_words.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -125,7 +127,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const randomQuote = AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)];
 const hasMobile = window.innerWidth < 768;
 
-const showJumpscare = (event: MouseEvent) => {
+const showJumpscare = (event?: MouseEvent) => {
     if (event) {
         event.preventDefault();
     }
@@ -143,14 +145,39 @@ const showJumpscare = (event: MouseEvent) => {
     }
 };
 
+const jumpscareVideo =
+    'https://cdn.discordapp.com/attachments/1051778216852996096/1076249777064390686/video.mp4';
+
+const avelVideo =
+    'https://cdn.discordapp.com/attachments/1051778216852996096/1076249777446064188/alah.mp4';
+
 onMounted(() => {
     const video = document.getElementById('jumpscare') as HTMLVideoElement;
     video.addEventListener('click', showJumpscare);
 
-    if (!hasMobile) {
-        const footerContent = document.getElementById('footer-content')!;
-        footerContent.style.height = `${footerContent.clientHeight + 30}px`;
+    let currentTyping = '';
 
+    document.addEventListener('keydown', function (event) {
+        currentTyping += event.key;
+    });
+
+    setInterval(() => {
+        if (currentTyping.length) {
+            const avelWords = ['avel', 'deliavel', 'deli avel'];
+
+            if (avelWords.some((word) => currentTyping.includes(word))) {
+                video.src = avelVideo;
+                showJumpscare();
+                currentTyping = '';
+            } else if (SwearWords.some((word) => currentTyping.includes(word))) {
+                video.src = jumpscareVideo;
+                showJumpscare();
+                currentTyping = '';
+            }
+        }
+    }, 100);
+
+    if (!hasMobile) {
         const goToSection = (height: number) => {
             const route = useRoute();
 
