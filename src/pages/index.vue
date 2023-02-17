@@ -38,7 +38,7 @@
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
                     <p class="text-gray-300 opacity-0" id="about">
-                        Hi! My name is <b class="text-white" @click="showJumpscare">Emirhan</b>, I
+                        Hi! My name is <b class="text-white select-none" @click="showJumpscare">Emirhan</b>, I
                         am a <b class="text-white">Full-Stack Developer</b> and
                         <b class="text-white">UI designer</b>. I live in
                         <b class="text-white"
