@@ -1,7 +1,7 @@
 <template>
     <div class="pt-8 lg:pt-16"></div>
     <div
-        class="flex h-full pt-[52px] md:pt-[68px] items-center justify-center px-48 mb-8"
+        class="flex h-full pt-[52px] md:pt-[68px] items-center justify-center px-6 md:px-48 mb-8"
         v-if="github.dataReceived"
     >
         <div class="grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center justify-center">
@@ -36,7 +36,7 @@
                         {{ repository.forks }}
                     </button>
                     <button
-                        class="flex text-gray-300 py-1 px-2 gap-2 rounded-lg items-center font-robotomono text-sm"
+                        class="flex text-gray-300 py-1 px-2 gap-2 rounded-lg items-center font-robotomono text-sm max-sm:hidden"
                         style="background-color: rgba(0, 0, 0, 0.2)"
                     >
                         <i class="fa-solid fa-code-fork text-xs"></i>
