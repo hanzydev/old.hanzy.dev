@@ -79,12 +79,13 @@
     </div>
     <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
         <div
-            class="h-36 w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
+            class="w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
             style="background-color: rgba(0, 0, 0, 0.2)"
+            id="footer-content"
         >
             <div class="flex flex-col">
-                <p class="font-semibold text-md">
-                    Do not forget it; The greatest war is the war against ignorance and reaction.
+                <p class="font-semibold text-md break-words">
+                    {{ AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)] }}
                 </p>
                 <a
                     class="mt-auto font-bold text-lg font-robotomono"
@@ -93,7 +94,7 @@
                     ><span class="link">> Mustafa Kemal Atatürk</span></a
                 >
             </div>
-            <i class="bi bi-info-circle text-7xl opacity-5 ml-auto my-auto"></i>
+            <i class="bi bi-quote text-7xl opacity-5 ml-auto my-auto"></i>
         </div>
         <Footer class="pt-12" />
     </div>
@@ -105,6 +106,8 @@ import { resolveDiscordData } from '../util/resolveDiscordData';
 import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
+import AtaturkQuotes from '../data/ataturk_quotes.json';
+import Config from '../data/config.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -115,6 +118,10 @@ const hasMobile = window.innerWidth < 768;
 
 onMounted(() => {
     if (!hasMobile) {
+        const footerContent = document.getElementById('footer-content')!;
+
+        footerContent.style.height = `${footerContent.clientHeight + 30}px`;
+
         const goToSection = (height: number) => {
             const route = useRoute();
 
@@ -157,7 +164,7 @@ const connect = () => {
             JSON.stringify({
                 op: 2,
                 d: {
-                    subscribe_to_id: '931957993925378050',
+                    subscribe_to_id: Config.DISCORD_USER_ID,
                 },
             }),
         );
@@ -225,8 +232,10 @@ const connect = () => {
 
 connect();
 
+let animated = false;
+
 watchEffect(() => {
-    if (discord.dataReceived) {
+    if (discord.dataReceived && !animated) {
         nextTick(() => {
             gsap.fromTo(
                 '#profile',
@@ -281,6 +290,8 @@ watchEffect(() => {
                     delay: 0.5,
                 },
             );
+
+            animated = true;
         });
     }
 });

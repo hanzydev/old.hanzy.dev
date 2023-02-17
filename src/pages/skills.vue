@@ -2,7 +2,7 @@
     <div class="lg:pt-8"></div>
     <div class="flex h-full pt-[52px] md:pt-[68px] px-6 md:px-48 items-center justify-center mb-8">
         <div class="space-y-3 w-screen xl:w-3/4 2xl:w-2/4 pt-6">
-            <div v-for="skill in skills" class="flex flex-col space-y-1">
+            <div v-for="skill in Skills" class="flex flex-col space-y-1">
                 <div class="flex">
                     <p class="text-gray-300">{{ skill.name }}</p>
                     <p class="text-gray-300 ml-auto opacity-0">{{ skill.level }}%</p>
@@ -29,81 +29,7 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
-
-const skills = [
-    {
-        name: 'JavaScript',
-        level: 90,
-    },
-    {
-        name: 'TypeScript',
-        level: 85,
-    },
-    {
-        name: 'HTML',
-        level: 100,
-    },
-    {
-        name: 'CSS',
-        level: 80,
-    },
-    {
-        name: 'SASS',
-        level: 75,
-    },
-    {
-        name: 'Python',
-        level: 20,
-    },
-    {
-        name: 'C#',
-        level: 50,
-    },
-    {
-        name: 'C++',
-        level: 30,
-    },
-    {
-        name: 'Vue',
-        level: 90,
-    },
-    {
-        name: 'Svelte',
-        level: 65,
-    },
-    {
-        name: 'React',
-        level: 50,
-    },
-    {
-        name: 'Nuxt',
-        level: 80,
-    },
-    {
-        name: 'SvelteKit',
-        level: 50,
-    },
-    {
-        name: 'Next.js',
-        level: 45,
-    },
-    {
-        name: 'Node.js',
-        level: 80,
-    },
-    {
-        name: 'MongoDB',
-        level: 60,
-    },
-    {
-        name: 'MySQL',
-        level: 80,
-    },
-    {
-        name: 'SQLite',
-        level: 80,
-    },
-];
+import Skills from '../data/skills.json';
 
 onMounted(async () => {
     const skillLevels = document.querySelectorAll('[data-skill-level]') as NodeListOf<HTMLElement>;
