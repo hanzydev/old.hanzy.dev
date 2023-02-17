@@ -1,4 +1,12 @@
 <template>
+    <div className="fixed h-screen w-screen z-[9999] top-0 left-0 hidden" id="jumpscare-container">
+        <video
+            src="https://dev-c82e1r1n0-deliever42.vercel.app/video.mp4"
+            loop
+            className="h-full w-full object-cover"
+            id="jumpscare"
+        ></video>
+    </div>
     <div id="main">
         <div v-if="discord.dataReceived">
             <div
@@ -30,8 +38,8 @@
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
                     <p class="text-gray-300 opacity-0" id="about">
-                        Hi! My name is <b class="text-white">Emirhan</b>, I am a
-                        <b class="text-white">Full-Stack Developer</b> and
+                        Hi! My name is <b class="text-white" @click="showJumpscare">Emirhan</b>, I
+                        am a <b class="text-white">Full-Stack Developer</b> and
                         <b class="text-white">UI designer</b>. I live in
                         <b class="text-white"
                             ><a href="https://en.wikipedia.org/wiki/Turkey" target="_blank"
@@ -80,12 +88,12 @@
     <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
         <div
             class="w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
-            style="background-color: rgba(0, 0, 0, 0.2)"
+            style="background-color: rgba(0, 0, 0, 0.05)"
             id="footer-content"
         >
             <div class="flex flex-col">
                 <p class="font-semibold text-md break-words">
-                    {{ AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)] }}
+                    {{ randomQuote }}
                 </p>
                 <a
                     class="mt-auto font-bold text-lg font-robotomono"
@@ -114,12 +122,33 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+const randomQuote = AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)];
 const hasMobile = window.innerWidth < 768;
 
+const showJumpscare = (event: MouseEvent) => {
+    if (event) {
+        event.preventDefault();
+    }
+
+    const container = document.getElementById('jumpscare-container');
+    const video = document.getElementById('jumpscare') as HTMLVideoElement;
+
+    if (container) {
+        container.classList.remove('hidden');
+    }
+
+    if (video) {
+        video.play();
+        video.requestFullscreen();
+    }
+};
+
 onMounted(() => {
+    const video = document.getElementById('jumpscare') as HTMLVideoElement;
+    video.addEventListener('click', showJumpscare);
+
     if (!hasMobile) {
         const footerContent = document.getElementById('footer-content')!;
-
         footerContent.style.height = `${footerContent.clientHeight + 30}px`;
 
         const goToSection = (height: number) => {
@@ -303,3 +332,9 @@ useHead({
     title: 'Deliever42 - Home',
 });
 </script>
+
+<style>
+#jumpscare::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+</style>
