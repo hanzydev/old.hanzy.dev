@@ -165,11 +165,11 @@ onMounted(() => {
         if (currentTyping.length) {
             const avelWords = ['avel', 'deliavel', 'deli avel'];
 
-            if (avelWords.some((word) => currentTyping.includes(word))) {
+            if (avelWords.some((word) => currentTyping.toLowerCase().includes(word))) {
                 video.src = avelVideo;
                 showJumpscare();
                 currentTyping = '';
-            } else if (SwearWords.some((word) => currentTyping.includes(word))) {
+            } else if (SwearWords.some((word) => currentTyping.toLowerCase() === word)) {
                 video.src = jumpscareVideo;
                 showJumpscare();
                 currentTyping = '';
