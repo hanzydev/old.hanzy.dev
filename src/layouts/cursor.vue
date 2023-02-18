@@ -23,7 +23,6 @@ onMounted(() => {
 
     const observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
-            console.log(mutation.type);
             if (mutation.type === 'childList') {
                 for (const a of document.querySelectorAll('a')) {
                     if (links.includes(a.id)) continue;
