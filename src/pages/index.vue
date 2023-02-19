@@ -22,6 +22,7 @@
                         :src="discord.data!.user.avatar_url"
                         class="w-52 h-52 rounded-full"
                         draggable="false"
+                        :alt="`${discord.data!.user.username}'s avatar`"
                     />
                     <a class="top-[10rem] left-[10rem] absolute bg-[#131b2b] p-2 rounded-full z-20">
                         <div
