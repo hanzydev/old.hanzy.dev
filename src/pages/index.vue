@@ -88,8 +88,8 @@
     </div>
     <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
         <div
-            class="w-2/4 rounded-xl px-7 py-6 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
-            style="background-color: rgba(0, 0, 0, 0.05)"
+            class="w-2/4 rounded-xl px-7 py-6 flex backdrop-blur-sm font-robotomono transition-all duration-300"
+            style="background-color: rgba(0, 0, 0, 0.05); box-shadow: 0 0 12px 12px #2564eb1e"
         >
             <div class="flex flex-col">
                 <p class="font-semibold text-md break-words">
