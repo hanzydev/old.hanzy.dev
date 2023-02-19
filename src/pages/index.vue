@@ -88,7 +88,7 @@
     </div>
     <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
         <div
-            class="w-2/4 rounded-xl p-7 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
+            class="w-2/4 rounded-xl px-7 py-6 flex backdrop-blur-sm font-robotomono shadow-xl shadow-gray-700 transition-all duration-300"
             style="background-color: rgba(0, 0, 0, 0.05)"
         >
             <div class="flex flex-col">
@@ -96,12 +96,22 @@
                     {{ randomQuote }}
                 </p>
                 <br />
-                <a
-                    class="mt-auto font-bold text-lg font-robotomono"
-                    href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
-                    target="_blank"
-                    ><span class="link">> Mustafa Kemal Atatürk</span></a
-                >
+                <br />
+                <div class="mt-auto flex link max-w-fit">
+                    <a
+                        class="font-bold text-lg font-robotomono"
+                        href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
+                        target="_blank"
+                        >> Mustafa Kemal Atatürk</a
+                    >
+                    <img
+                        src="/ataturk_signature.png"
+                        width="100"
+                        height="100"
+                        draggable="false"
+                        class="ml-2"
+                    />
+                </div>
             </div>
             <i class="bi bi-quote text-7xl opacity-5 ml-auto my-auto"></i>
         </div>
