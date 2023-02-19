@@ -98,17 +98,12 @@
                 <br />
                 <br />
                 <a
-                    class="font-bold text-lg font-robotomono mt-auto flex link max-w-fit cursor-pointer"
+                    class="font-bold text-lg font-robotomono mt-auto link max-w-fit"
                     href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
                     target="_blank"
-                    >> Mustafa Kemal Atatürk
-                    <img
-                        src="/ataturk_signature.png"
-                        width="90"
-                        height="90"
-                        draggable="false"
-                        class="ml-2"
-                /></a>
+                >
+                    > Mustafa Kemal Atatürk</a
+                >
             </div>
             <i class="bi bi-quote text-7xl opacity-5 ml-auto my-auto"></i>
         </div>
