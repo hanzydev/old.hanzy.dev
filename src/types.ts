@@ -5,7 +5,7 @@ export interface DiscordData {
         discriminator: string;
         tag: `${string}#${string}`;
         id: string;
-        avatar_url: `https://cdn.discordapp.com/avatars/${string}/${string}.${'png' | 'gif'}`;
+        avatar_url: string;
     };
 }
 
