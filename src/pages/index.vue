@@ -61,7 +61,7 @@
                                 Listening to
                                 <b
                                     ><a
-                                        :href="`https://youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
+                                        :href="`https://music.youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
                                         target="_blank"
                                     >
                                         {{
@@ -97,21 +97,18 @@
                 </p>
                 <br />
                 <br />
-                <div class="mt-auto flex link max-w-fit">
-                    <a
-                        class="font-bold text-lg font-robotomono"
-                        href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
-                        target="_blank"
-                        >> Mustafa Kemal Atatürk</a
-                    >
+                <a
+                    class="font-bold text-lg font-robotomono mt-auto flex link max-w-fit cursor-pointer"
+                    href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
+                    target="_blank"
+                    >> Mustafa Kemal Atatürk
                     <img
                         src="/ataturk_signature.png"
-                        width="100"
-                        height="100"
+                        width="90"
+                        height="90"
                         draggable="false"
                         class="ml-2"
-                    />
-                </div>
+                /></a>
             </div>
             <i class="bi bi-quote text-7xl opacity-5 ml-auto my-auto"></i>
         </div>
