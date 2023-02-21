@@ -22,6 +22,9 @@ useBodyAttrs({
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 #background-gradient {
     background: radial-gradient(at 50% 50%, #2564eb2f 0%, #2564eb00 75%);
     background-size: 55% 90%;

@@ -61,11 +61,7 @@ export default defineNuxtConfig({
                 {
                     rel: 'icon',
                     href: '/favicon.ico',
-                },
-                {
-                    rel: 'stylesheet',
-                    href: '/fonts.css',
-                },
+                }
             ],
             htmlAttrs: {
                 lang: 'en',
