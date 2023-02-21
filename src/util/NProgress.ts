@@ -12,11 +12,11 @@ const generateProgress = () => {
     if (progress >= 0 && progress < 0.2) {
         amount = 0.1;
     } else if (progress >= 0.2 && progress < 0.5) {
-        amount = 0.04;
+        amount = 0.07;
     } else if (progress >= 0.5 && progress < 0.8) {
-        amount = 0.02;
+        amount = 0.05;
     } else if (progress >= 0.8 && progress < 0.99) {
-        amount = 0.005;
+        amount = 0.03;
     }
 
     return clamp(progress + amount, 0, 0.994);
@@ -24,7 +24,12 @@ const generateProgress = () => {
 
 const updateProgress = () => {
     progress = generateProgress();
-    gsap.to('#nprogress', { duration: 0.2, opacity: 1, width: `${progress * 100}%` });
+    gsap.to('#nprogress', {
+        duration: 0.3,
+        opacity: 1,
+        width: `${progress * 100}%`,
+        ease: 'power2.inOut',
+    });
 };
 
 const start = () => {
@@ -45,6 +50,7 @@ const end = () => {
         duration: 0.3,
         opacity: 0,
         width: '100%',
+        ease: 'power2.inOut',
         onComplete: () => {
             gsap.set('#nprogress', { width: 0 });
             progress = 0;
