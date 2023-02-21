@@ -285,7 +285,13 @@ const connect = () => {
                 );
 
                 if (!ytMusic.newDataReceived) {
-                    if (ytMusicActivity && ytMusic.data?.song_name !== ytMusicActivity.state) {
+                    if (
+                        ytMusicActivity &&
+                        ytMusic.data?.song_name.replace(/ +/g, '') !==
+                            (ytMusicActivity.state.includes(ytMusicActivity.details)
+                            ? ytMusicActivity.state
+                            : `${ytMusicActivity.state} - ${ytMusicActivity.details}`).replace(/ +/g, '')
+                    ) {
                         ytMusic.setNewDataReceived(true);
                         ytMusic.setData(await resolveYoutubeMusicData(ytMusicActivity));
                         ytMusic.setNewDataReceived(false);
