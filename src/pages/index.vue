@@ -27,6 +27,7 @@
                         height="208"
                         width="208"
                         quality="100"
+                        preload
                         @load="showStatus = true"
                     />
                     <div

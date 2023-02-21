@@ -8,7 +8,6 @@ async function getSongDetails(songName: string): Promise<any> {
 }
 
 export async function resolveYoutubeMusicData(activityData: any): Promise<YoutubeMusicData> {
-    console.log(activityData);
     let ytMusic = activityData
         ? {
               song_name: activityData.state.includes(activityData.details) ? activityData.state : `${activityData.state} - ${activityData.details}`,
