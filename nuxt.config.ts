@@ -76,12 +76,12 @@ export default defineNuxtConfig({
         build: {
             rollupOptions: {
                 output: {
-                    chunkFileNames: () => `_nuxt/chunks/${randomString(32)}.js`,
-                    entryFileNames: () => `_nuxt/chunks/${randomString(32)}.js`,
-                    assetFileNames: () => `_nuxt/assets/${randomString(32)}[extname]`,
+                    chunkFileNames: () => `_nuxt/chunks/${randomString(64)}.js`,
+                    entryFileNames: () => `_nuxt/chunks/${randomString(64)}.js`,
+                    assetFileNames: () => `_nuxt/assets/${randomString(64)}[extname]`,
                     manualChunks: (id) => {
                         if (id.includes('node_modules')) {
-                            return `_nuxt/chunks/${randomString(32)}.js`;
+                            return `_nuxt/chunks/${randomString(64)}.js`;
                         } else {
                             return id;
                         }
