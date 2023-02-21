@@ -65,8 +65,8 @@
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="1.25rem"
-                                height="1.25rem"
+                                width="1.25em"
+                                height="1.25em"
                                 viewBox="0 0 24 24"
                                 fill="#fff"
                             >
@@ -132,8 +132,8 @@
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#000000"
-                width="5.75rem"
-                height="5.75rem"
+                width="5.75em"
+                height="5.75em"
                 viewBox="0 0 512 512"
                 class="ml-auto my-auto"
             >
