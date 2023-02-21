@@ -21,14 +21,15 @@
                     <nuxt-img
                         :src="discord.data!.user.avatar_url"
                         :alt="`${discord.data!.user.username}'s avatar`"
-                        class="w-52 h-52 rounded-full"
+                        class="rounded-full"
                         draggable="false"
                         format="webp"
+                        height="208"
+                        width="208"
                         quality="100"
-                        preload
                         @load="showStatus = true"
                     />
-                    <a
+                    <div
                         class="top-[10rem] left-[10rem] absolute p-2 rounded-full z-20"
                         v-if="showStatus"
                         :style="{
@@ -41,7 +42,7 @@
                                 backgroundColor: StatusColors[discord.data!.status]
                             }"
                         ></div>
-                    </a>
+                    </div>
                 </a>
                 <div>
                     <h1 class="font-robotomono font-bold opacity-0" id="name">
@@ -289,8 +290,9 @@ const connect = () => {
                         ytMusicActivity &&
                         ytMusic.data?.song_name.replace(/ +/g, '') !==
                             (ytMusicActivity.state.includes(ytMusicActivity.details)
-                            ? ytMusicActivity.state
-                            : `${ytMusicActivity.state} - ${ytMusicActivity.details}`).replace(/ +/g, '')
+                                ? ytMusicActivity.state
+                                : `${ytMusicActivity.state} - ${ytMusicActivity.details}`
+                            ).replace(/ +/g, '')
                     ) {
                         ytMusic.setNewDataReceived(true);
                         ytMusic.setData(await resolveYoutubeMusicData(ytMusicActivity));

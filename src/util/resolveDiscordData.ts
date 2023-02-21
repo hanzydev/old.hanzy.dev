@@ -10,7 +10,7 @@ export async function resolveDiscordData(data: any): Promise<DiscordData> {
             id: data.discord_user.id,
             avatar_url: `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${
                 data.discord_user.avatar
-            }.${data.discord_user.avatar.startsWith('a_') ? 'gif' : 'png'}?size=1024`,
+            }.${data.discord_user.avatar.startsWith('a_') ? 'gif' : 'webp'}?size=1024`,
         },
     } as DiscordData;
 }

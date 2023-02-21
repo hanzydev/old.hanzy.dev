@@ -17,6 +17,7 @@
                 href="https://github.com/deliever42"
                 target="_blank"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#333333] transition-colors duration-300"
+                aria-label="Github"
             >
                 <svg height="1.5em" viewBox="0 0 16 16" version="1.1" width="1.5em">
                     <path
@@ -30,6 +31,7 @@
                 href="https://instagram.com/deliever42"
                 target="_blank"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#b521da] transition-colors duration-300"
+                aria-label="Instagram"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +50,7 @@
                 href="https://discord.com/users/931957993925378050"
                 target="_blank"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#5865f2] transition-colors duration-300"
+                aria-label="Discord"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +68,7 @@
             <a
                 href="mailto:contact@deliever42.me"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#ba3a2c] transition-colors duration-300"
+                aria-label="Mail"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
