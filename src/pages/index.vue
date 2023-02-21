@@ -25,6 +25,7 @@
                         draggable="false"
                         format="webp"
                         quality="100"
+                        preload
                         @load="showStatus = true"
                     />
                     <a
