@@ -63,8 +63,22 @@
                             class="flex items-center max-xl:justify-center"
                             v-if="ytMusic.dataReceived"
                         >
-                            <i class="bi bi-music-note text-lg"></i>
-                            <p class="ml-2 text-gray-300" v-if="!ytMusic.data">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.25rem"
+                                height="1.25rem"
+                                viewBox="0 0 24 24"
+                                fill="#fff"
+                            >
+                                <path
+                                    d="M13 17C13 18.6569 11.6569 20 10 20C8.34315 20 7 18.6569 7 17C7 15.3431 8.34315 14 10 14C11.6569 14 13 15.3431 13 17ZM13 17V6M13 6V4H17V6H13Z"
+                                    stroke="#fff"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            <p class="text-gray-300" v-if="!ytMusic.data">
                                 Currently not listening to anything.
                             </p>
                             <p class="ml-2 text-gray-300" v-else>
@@ -98,7 +112,7 @@
     </div>
     <div class="flex flex-col items-center justify-center h-screen max-xl:hidden" id="footer">
         <div
-            class="w-2/4 rounded-xl px-7 py-6 flex backdrop-blur-sm font-robotomono transition-all duration-300"
+            class="w-2/4 rounded-xl px-7 py-6 flex font-robotomono transition-all duration-300"
             style="background-color: rgba(0, 0, 0, 0.05); box-shadow: 0 0 12px 12px #2564eb1e"
         >
             <div class="flex flex-col">
@@ -115,7 +129,19 @@
                     > Mustafa Kemal Atatürk</a
                 >
             </div>
-            <i class="bi bi-quote text-7xl opacity-5 ml-auto my-auto"></i>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#000000"
+                width="5.75rem"
+                height="5.75rem"
+                viewBox="0 0 512 512"
+                class="ml-auto my-auto"
+            >
+                <path
+                    d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                    style="fill: rgba(255, 255, 255, 0.04)"
+                />
+            </svg>
         </div>
         <Footer class="pt-12" />
     </div>
