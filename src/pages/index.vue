@@ -115,7 +115,7 @@
             class="w-2/4 rounded-xl px-7 py-6 flex font-robotomono transition-all duration-300"
             style="background-color: rgba(0, 0, 0, 0.05); box-shadow: 0 0 12px 12px #2564eb1e"
         >
-            <div class="flex flex-col">
+            <div class="flex flex-col max-w-[98.5%]">
                 <p class="font-semibold text-md break-words">
                     {{ randomQuote }}
                 </p>
@@ -129,19 +129,20 @@
                     > Mustafa Kemal Atatürk</a
                 >
             </div>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
-                width="5.75em"
-                height="5.75em"
-                viewBox="0 0 512 512"
-                class="ml-auto my-auto"
-            >
-                <path
-                    d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-                    style="fill: rgba(255, 255, 255, 0.04)"
-                />
-            </svg>
+            <div class="ml-auto my-auto">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#000000"
+                    width="3.5em"
+                    height="3.5em"
+                    viewBox="0 0 512 512"
+                >
+                    <path
+                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                        style="fill: rgba(255, 255, 255, 0.04)"
+                    />
+                </svg>
+            </div>
         </div>
         <Footer class="pt-12" />
     </div>
