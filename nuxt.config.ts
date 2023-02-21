@@ -1,3 +1,14 @@
+const randomString = (length: number) => {
+    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let result = '';
+
+    for (let i = length; i > 0; --i) {
+        result += chars[Math.floor(Math.random() * chars.length)];
+    }
+
+    return result;
+};
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge', '@nuxtjs/robots'],
@@ -58,6 +69,24 @@ export default defineNuxtConfig({
             ],
             htmlAttrs: {
                 lang: 'en',
+            },
+        },
+    },
+    vite: {
+        build: {
+            rollupOptions: {
+                output: {
+                    chunkFileNames: () => `_nuxt/chunks/${randomString(32)}.js`,
+                    entryFileNames: () => `_nuxt/chunks/${randomString(32)}.js`,
+                    assetFileNames: () => `_nuxt/assets/${randomString(32)}[extname]`,
+                    manualChunks: (id) => {
+                        if (id.includes('node_modules')) {
+                            return `_nuxt/chunks/${randomString(32)}.js`;
+                        } else {
+                            return id;
+                        }
+                    },
+                },
             },
         },
     },

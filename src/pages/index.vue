@@ -28,6 +28,7 @@
                         width="208"
                         quality="100"
                         preload
+                        loading="eager"
                         @load="showStatus = true"
                     />
                     <div

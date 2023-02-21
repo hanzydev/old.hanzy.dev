@@ -143,11 +143,4 @@ useHead({
 .repository:hover {
     box-shadow: 0 2px 10px 8px #2564eb1e;
 }
-
-.cls-1 {
-    fill: none;
-    stroke: #fff;
-    stroke-miterlimit: 10;
-    stroke-width: 1.92px;
-}
 </style>
