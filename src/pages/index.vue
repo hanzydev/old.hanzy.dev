@@ -18,11 +18,13 @@
                     class="relative opacity-0"
                     id="profile"
                 >
-                    <img
+                    <nuxt-img
                         :src="discord.data!.user.avatar_url"
+                        :alt="`${discord.data!.user.username}'s avatar`"
                         class="w-52 h-52 rounded-full"
                         draggable="false"
-                        :alt="`${discord.data!.user.username}'s avatar`"
+                        format="webp"
+                        quality="100"
                     />
                     <a class="top-[10rem] left-[10rem] absolute bg-[#131b2b] p-2 rounded-full z-20">
                         <div
