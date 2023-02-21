@@ -25,8 +25,15 @@
                         draggable="false"
                         format="webp"
                         quality="100"
+                        @load="showStatus = true"
                     />
-                    <a class="top-[10rem] left-[10rem] absolute bg-[#131b2b] p-2 rounded-full z-20">
+                    <a
+                        class="top-[10rem] left-[10rem] absolute p-2 rounded-full z-20"
+                        v-if="showStatus"
+                        :style="{
+                            backgroundColor: hasMobile ? '#131d32' : '#131b2b',
+                        }"
+                    >
                         <div
                             class="w-6 h-6 rounded-full"
                             :style="{
@@ -131,6 +138,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const randomQuote = AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)];
 const hasMobile = window.innerWidth < 768;
+
+let showStatus = $ref(false);
 
 const showJumpscare = (event?: MouseEvent) => {
     if (event) {

@@ -108,6 +108,6 @@ useHead({
 
 <style>
 .repository:hover {
-    box-shadow: 0 0 2rem 12px #2564eb1e;
+    box-shadow: 0 2px 10px 8px #2564eb1e;
 }
 </style>
