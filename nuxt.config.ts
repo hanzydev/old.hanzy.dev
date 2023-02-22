@@ -10,7 +10,7 @@ const randomString = (length: number) => {
 };
 
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge'],
+    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge', '@nuxtjs/robots'],
     srcDir: 'src',
     ssr: false,
     css: ['normalize.css/normalize.css'],
