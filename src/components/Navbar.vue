@@ -132,6 +132,7 @@
                     <nuxt-img
                         :key="locale"
                         :src="localeMap[locale as ILocale].icon"
+                        :alt="locale"
                         draggable="false"
                         format="webp"
                         height="24"
