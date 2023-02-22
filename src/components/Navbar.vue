@@ -4,13 +4,15 @@
     >
         <p class="font-robotomono text-xl font-semibold select-none max-md:text-base">deliever42</p>
         <div class="flex space-x-6 max-md:space-x-4 items-center max-md:ml-auto">
-            <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm link">Home</RouterLink>
-            <RouterLink to="/skills" class="font-robotomono text-lg max-md:text-sm link"
-                >Skills</RouterLink
-            >
-            <RouterLink to="/projects" class="font-robotomono text-lg max-md:text-sm link"
-                >Projects</RouterLink
-            >
+            <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm link">{{
+                t('navbar.home')
+            }}</RouterLink>
+            <RouterLink to="/skills" class="font-robotomono text-lg max-md:text-sm link">{{
+                t('navbar.skills')
+            }}</RouterLink>
+            <RouterLink to="/projects" class="font-robotomono text-lg max-md:text-sm link">{{
+                t('navbar.projects')
+            }}</RouterLink>
         </div>
         <div class="flex space-x-2 items-center max-md:hidden">
             <a
@@ -86,3 +88,7 @@
         </div>
     </nav>
 </template>
+
+<script setup lang="ts">
+import { t } from '../i18n';
+</script>

@@ -1,0 +1,13 @@
+{
+    "about": "Ciao! Mi chiamo <b class=\"text-white select-none\">Emirhan</b>, sono uno <b class=\"text-white\">sviluppatore Full-Stack</b> e <b class=\"text-white\">designer UI</b>. Vivo in <b class=\"text-white\"><a href=\"https://it.wikipedia.org/wiki/Turchia\" target=\"_blank\">Turchia</a></b>.",
+    "listening": {
+        "not_listening": "Al momento non sto ascoltando nulla.",
+        "listening": "Attualmente sto ascoltando <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b>"
+    },
+    "navbar": {
+        "home": "Casa",
+        "skills": "Competenze",
+        "projects": "Progetti"
+    },
+    "footer": "Realizzato con 💙 da <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>"
+}

@@ -51,17 +51,7 @@
                         {{ discord.data!.user.username
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
-                    <p class="text-gray-300 opacity-0" id="about">
-                        Hi! My name is
-                        <b class="text-white select-none" @click="showJumpscare">Emirhan</b>, I am a
-                        <b class="text-white">Full-Stack Developer</b> and
-                        <b class="text-white">UI designer</b>. I live in
-                        <b class="text-white"
-                            ><a href="https://en.wikipedia.org/wiki/Turkey" target="_blank"
-                                >Turkey</a
-                            ></b
-                        >.
-                    </p>
+                    <p class="text-gray-300 opacity-0" id="about" v-html="t('about')"></p>
                     <div class="mt-4 opacity-0" id="listening">
                         <div
                             class="flex items-center max-xl:justify-center"
@@ -83,23 +73,21 @@
                                 />
                             </svg>
                             <p class="text-gray-300" v-if="!ytMusic.data">
-                                Currently not listening to anything.
+                                {{ t('listening.not_listening') }}
                             </p>
-                            <p class="ml-2 text-gray-300" v-else>
-                                Listening to
-                                <b
-                                    ><a
-                                        :href="`https://music.youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
-                                        target="_blank"
-                                    >
-                                        {{
+                            <p
+                                class="ml-2 text-gray-300"
+                                v-else
+                                v-html="
+                                    t('listening.listening', {
+                                        song_url: `https://music.youtube.com/watch?v=${ytMusic.data?.details.videoId}`,
+                                        song_name:
                                             ytMusic.data?.song_name?.length > 60
                                                 ? ytMusic.data?.song_name?.slice(0, 57) + ' ...'
-                                                : ytMusic.data?.song_name
-                                        }}
-                                    </a></b
-                                >
-                            </p>
+                                                : ytMusic.data?.song_name,
+                                    })
+                                "
+                            ></p>
 
                             <Spinner class="ml-4" size="xs" v-if="ytMusic.newDataReceived" />
                         </div>
@@ -164,6 +152,7 @@ import SwearWords from '../data/swear_words.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { t } from '../i18n';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

@@ -9,9 +9,8 @@ const randomString = (length: number) => {
     return result;
 };
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge', '@nuxtjs/robots'],
+    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge'],
     srcDir: 'src',
     ssr: false,
     css: ['normalize.css/normalize.css'],
@@ -61,7 +60,7 @@ export default defineNuxtConfig({
                 {
                     rel: 'icon',
                     href: '/favicon.ico',
-                }
+                },
             ],
             htmlAttrs: {
                 lang: 'en',

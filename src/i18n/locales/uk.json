@@ -1,0 +1,13 @@
+{
+    "about": "Привіт! Мене звуть <b class=\"text-white select-none\">Emirhan</b>, я <b class=\"text-white\">Full-Stack розробник</b> і <b class=\"text-white\">UI дизайнер</b>. Я живу в <b class=\"text-white\"><a href=\"https://uk.wikipedia.org/wiki/%D0%A2%D1%83%D1%80%D0%B5%D1%87%D1%87%D0%B8%D0%BD%D0%B0\" target=\"_blank\">Туреччині</a></b>.",
+    "listening": {
+        "not_listening": "Наразі нічого не слухаю.",
+        "listening": "Наразі слухаємо <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b>"
+    },
+    "navbar": {
+        "home": "Головна",
+        "skills": "Навички",
+        "projects": "Проекти"
+    },
+    "footer": "Зроблено за допомогою 💙 <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>"
+}

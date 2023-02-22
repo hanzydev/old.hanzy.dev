@@ -12,8 +12,10 @@
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.3.1",
     "@pinia/nuxt": "^0.4.6",
+    "@types/lodash": "^4.14.191",
     "@types/node": "^18.13.0",
     "gsap": "^3.11.4",
+    "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.30"
   },

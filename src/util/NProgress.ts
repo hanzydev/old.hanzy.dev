@@ -48,13 +48,20 @@ const end = () => {
 
     gsap.to('#nprogress', {
         duration: 0.3,
-        opacity: 0,
         width: '100%',
         ease: 'power2.inOut',
         onComplete: () => {
-            gsap.set('#nprogress', { width: 0 });
-            progress = 0;
-            isAnimating = false;
+            gsap.to('#nprogress', {
+                opacity: 0,
+                duration: 0.2,
+                ease: 'power2.out',
+                onComplete: () => {
+                    gsap.set('#nprogress', { width: 0 });
+
+                    progress = 0;
+                    isAnimating = false;
+                },
+            });
         },
     });
 };

@@ -1,0 +1,13 @@
+{
+    "about": "Привет! Меня зовут <b class=\"text-white select-none\">Emirhan</b>, я <b class=\"text-white\">Full-Stack разработчик</b> и <b class=\"text-white\">UI дизайнер</b>. Я живу в <b class=\"text-white\"><a href=\"https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%80%D1%86%D0%B8%D1%8F\" target=\"_blank\">Турции</a></b>.",
+    "listening": {
+        "not_listening": "В настоящее время ничего не слушаю.",
+        "listening": "В настоящее время слушает <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b>"
+    },
+    "navbar": {
+        "home": "Главная",
+        "skills": "Навыки",
+        "projects": "Проекты"
+    },
+    "footer": "Сделано с 💙 by <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>"
+}
