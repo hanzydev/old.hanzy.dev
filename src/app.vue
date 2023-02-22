@@ -26,9 +26,9 @@ useBodyAttrs({
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 #background-gradient {
-    background: radial-gradient(at 50% 50%, #2564eb2f 0%, #2564eb00 75%);
-    background-size: 55% 90%;
-    background-position: 50% 50%;
+    background: radial-gradient(at 50% 50%, #2564eb3d 0%, #2564eb00 65%);
+    background-size: 100%;
+    background-position: 50%;
 }
 
 .font-robotomono {

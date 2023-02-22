@@ -63,6 +63,7 @@
                                 height="1.25em"
                                 viewBox="0 0 24 24"
                                 fill="#fff"
+                                class="mr-2"
                             >
                                 <path
                                     d="M13 17C13 18.6569 11.6569 20 10 20C8.34315 20 7 18.6569 7 17C7 15.3431 8.34315 14 10 14C11.6569 14 13 15.3431 13 17ZM13 17V6M13 6V4H17V6H13Z"
@@ -76,7 +77,7 @@
                                 {{ t('listening.not_listening') }}
                             </p>
                             <p
-                                class="ml-2 text-gray-300"
+                                class="text-gray-300"
                                 v-else
                                 v-html="
                                     t('listening.listening', {

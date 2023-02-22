@@ -2,7 +2,11 @@
 module.exports = {
     content: ['./src/**/*.vue'],
     theme: {
-        extend: {},
+        extend: {
+            screens: {
+                xs: '448px',
+            },
+        },
     },
     plugins: [],
 };
