@@ -1,4 +1,7 @@
 {
+  "name": "deliever-website",
+  "version": "1.0.0",
+  "description": "Deliever's website",
   "private": true,
   "scripts": {
     "build": "nuxt build",
