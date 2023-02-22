@@ -51,7 +51,7 @@
                         {{ discord.data!.user.username
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
-                    <p class="text-gray-300 opacity-0" id="about" v-html="t('about.about')"></p>
+                    <p class="text-gray-300 opacity-0 leading-5" id="about" v-html="t('about.about')"></p>
                     <div class="mt-4 opacity-0" id="listening">
                         <div
                             class="flex items-center max-xl:justify-center"
@@ -152,14 +152,34 @@ import SwearWords from '../data/swear_words.json';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { t } from '../i18n';
+import { t, currentLocale } from '../i18n';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const ataturkQuotes = t('ataturk.quotes');
-const randomQuote = ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)];
 const hasMobile = window.innerWidth < 768;
 const hasMobile2 = window.innerWidth < 1280;
+
+let ataturkQuotes = $ref(t('ataturk.quotes'));
+let randomQuote = $ref(ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)]);
+
+watch(currentLocale, () => {
+    ataturkQuotes = t('ataturk.quotes');
+    randomQuote = ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)];
+
+    useHead({
+        title: `Deliever42 - ${t('navbar.home')}`,
+        meta: [
+            {
+                name: 'description',
+                content: t('about.short_description'),
+            },
+            {
+                property: 'og:description',
+                content: t('about.short_description'),
+            },
+        ],
+    });
+});
 
 let showStatus = $ref(false);
 

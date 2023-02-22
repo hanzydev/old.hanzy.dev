@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Ciao! Mi chiamo <b class=\"text-white select-none\">Emirhan</b>, sono uno <b class=\"text-white\">sviluppatore Full-Stack</b> e <b class=\"text-white\">designer UI</b>. Vivo in <b class=\"text-white\"><a href=\"https://it.wikipedia.org/wiki/Turchia\" target=\"_blank\">Turchia</a></b>.",
+        "about": "Ciao! Mi chiamo <b class=\"text-white select-none\">Emirhan</b>, sono uno <b class=\"text-white\">sviluppatore Full-Stack</b> e <b class=\"text-white\">designer UI</b>.<br />Vivo in <b class=\"text-white\"><a href=\"https://it.wikipedia.org/wiki/Turchia\" target=\"_blank\">Turchia</a></b>.",
         "short_about": "Mi chiamo Emirhan, sono uno sviluppatore Full-Stack e un designer UI. Vivo in Turchia."
     },
     "listening": {
@@ -12,7 +12,7 @@
         "skills": "Competenze",
         "projects": "Progetti"
     },
-    "footer": "Realizzato con 💙 da <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>",
+    "footer": "Realizzato con 💙 da <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue transition-colors duration-300\">Deliever42</a></b>",
     "ataturk": {
         "wikipedia": "https://it.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
         "quotes": [
@@ -139,5 +139,6 @@
             "Per tutto nel mondo, per la civiltà, per la vita, per il successo, il padrone più genuino è la scienza, è un FEV.",
             "Ricordati che; La più grande guerra è la guerra contro l'ignoranza e la reazione."
         ]
-    }
+    },
+    "icon": "https://www.svgrepo.com/show/237296/italy.svg"
 }

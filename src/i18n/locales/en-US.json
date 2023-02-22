@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Hi! My name is <b class=\"text-white select-none\">Emirhan</b>, I am a <b class=\"text-white\">Full-Stack Developer</b> and <b class=\"text-white\">UI Designer</b>. I live in <b class=\"text-white\"><a href=\"https://en.wikipedia.org/wiki/Turkey\" target=\"_blank\">Turkey</a></b>.",
+        "about": "Hi! My name is <b class=\"text-white select-none\">Emirhan</b>, I am a <b class=\"text-white\">Full-Stack Developer</b> and <b class=\"text-white\">UI Designer</b>.<br />I live in <b class=\"text-white\"><a href=\"https://en.wikipedia.org/wiki/Turkey\" target=\"_blank\">Turkey</a></b>.",
         "short_about": "Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey."
     },
     "listening": {
@@ -12,7 +12,7 @@
         "skills": "Skills",
         "projects": "Projects"
     },
-    "footer": "Made with 💙 by <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>",
+    "footer": "Made with 💙 by <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue transition-colors duration-300\">Deliever42</a></b>",
     "ataturk": {
         "wikipedia": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
         "quotes": [
@@ -139,5 +139,6 @@
             "For everything in the world, for civilization, for life, for success, the most genuine master is science, it is a fev.",
             "Remember that; The greatest war is the war against ignorance and reaction."
         ]
-    }
+    },
+    "icon": "https://www.svgrepo.com/show/237433/united-states.svg"
 }

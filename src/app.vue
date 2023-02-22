@@ -58,6 +58,10 @@ useBodyAttrs({
     background-color: rgb(37 99 235);
 }
 
+.link-blue:hover {
+    color: rgb(37 99 235);
+}
+
 .link:hover::before {
     transform-origin: left;
     transform: scaleX(1);

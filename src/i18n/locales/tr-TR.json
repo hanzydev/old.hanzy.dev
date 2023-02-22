@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Merhaba! Benim adım <b class=\"text-white select-none\">Emirhan</b>, <b class=\"text-white\">Tam-Yığın Geliştiricisi</b> ve <b class=\"text-white\">kullanıcı arayüzü (UI) tasarımcısıyım</b>. <b class=\"text-white\"><a href=\"https://tr.wikipedia.org/wiki/T%C3%BCrkiye\" target=\"_blank\">Türkiye</a></b>'de yaşıyorum.",
+        "about": "Merhaba! Benim adım <b class=\"text-white select-none\">Emirhan</b>, <b class=\"text-white\">Tam-Yığın Geliştiricisi</b> ve <b class=\"text-white\">kullanıcı arayüzü (UI) tasarımcısıyım</b>.<br /><b class=\"text-white\"><a href=\"https://tr.wikipedia.org/wiki/T%C3%BCrkiye\" target=\"_blank\">Türkiye</a></b>'de yaşıyorum.",
         "short_about": "Merhaba! Benim adım Emirhan, Ben Tam-Yığın Geliştirici ve kullanıcı arayüzü tasarımcısıyım. Türkiye'de yaşıyorum."
     },
     "listening": {
@@ -12,7 +12,7 @@
         "skills": "Yetenekler",
         "projects": "Projeler"
     },
-    "footer": "<b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b> tarafından 💙 ile yapılmıştır",
+    "footer": "<b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue transition-colors duration-300\">Deliever42</a></b> tarafından 💙 ile yapılmıştır",
     "ataturk": {
         "wikipedia": "https://tr.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
         "quotes": [
@@ -139,5 +139,6 @@
             "Dünyada herşey için, medeniyet için, hayat için, başarı için, en hakiki mürşit bilimdir, fendir.",
             "Unutmayın ki; en büyük savaş, cehalete ve gericiliğe karşı yapılan savaştır."
         ]
-    }
+    },
+    "icon": "https://www.svgrepo.com/show/237418/turkey.svg"
 }

@@ -100,7 +100,23 @@
 <script setup lang="ts">
 import { useGithub } from '../store';
 import gsap from 'gsap';
-import { t } from '../i18n';
+import { t, currentLocale } from '../i18n';
+
+watch(currentLocale, () => {
+    useHead({
+        title: `Deliever42 - ${t('navbar.projects')}`,
+        meta: [
+            {
+                name: 'description',
+                content: t('about.short_description'),
+            },
+            {
+                property: 'og:description',
+                content: t('about.short_description'),
+            },
+        ],
+    });
+});
 
 const github = useGithub();
 

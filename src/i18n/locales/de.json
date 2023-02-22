@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Hallo! Mein Name ist <b class=\"text-white select-none\">Emirhan</b>, ich bin ein <b class=\"text-white\">Full-Stack-Entwickler</b> und <b class=\"text-white\">UI-Designer</b>. Ich lebe in der <b class=\"text-white\"><a href=\"https://de.wikipedia.org/wiki/T%C3%BCrkei\" target=\"_blank\">Türkei</a></b>.",
+        "about": "Hallo! Mein Name ist <b class=\"text-white select-none\">Emirhan</b>, ich bin ein <b class=\"text-white\">Full-Stack-Entwickler</b> und <b class=\"text-white\">UI-Designer</b>.<br />Ich lebe in der <b class=\"text-white\"><a href=\"https://de.wikipedia.org/wiki/T%C3%BCrkei\" target=\"_blank\">Türkei</a></b>.",
         "short_about": "Hallo! Mein Name ist Emirhan, ich bin ein Full-Stack-Entwickler und UI-Designer. Ich lebe in der Türkei."
     },
     "listening": {
@@ -12,7 +12,7 @@
         "skills": "Fertigkeiten",
         "projects": "Projekte"
     },
-    "footer": "Erstellt mit 💙 von <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>",
+    "footer": "Erstellt mit 💙 von <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue transition-colors duration-300\">Deliever42</a></b>",
     "ataturk": {
         "wikipedia": "https://de.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
         "quotes": [
@@ -139,5 +139,6 @@
             "Für alles auf der Welt, für die Zivilisation, für das Leben, für den Erfolg ist der echte Meister die Wissenschaft, es ist ein FEV.",
             "Erinnere dich daran; Der größte Krieg ist der Krieg gegen Unwissenheit und Reaktion."
         ]
-    }
+    },
+    "icon": "https://www.svgrepo.com/show/237267/germany.svg"
 }

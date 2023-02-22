@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Mi nombre es <b class=\"text-white select-none\">Emirhan</b>, soy un <b class=\"text-white\">desarrollador Full-Stack</b> y <b class=\"text-white\">diseñador de interfaz de usuario</b>. Vivo en <b class=\"text-white\"><a href=\"https://es.wikipedia.org/wiki/Turqu%C3%ADa\" target=\"_blank\">Turquía</a></b>.",
+        "about": "Mi nombre es <b class=\"text-white select-none\">Emirhan</b>, soy un <b class=\"text-white\">desarrollador Full-Stack</b> y <b class=\"text-white\">diseñador de interfaz de usuario</b>.<br />Vivo en <b class=\"text-white\"><a href=\"https://es.wikipedia.org/wiki/Turqu%C3%ADa\" target=\"_blank\">Turquía</a></b>.",
         "short_about": "Hola, mi nombre es Emirhan, soy un desarrollador Full-Stack y diseñador de interfaz de usuario. Vivo en Turquía."
     },
     "listening": {
@@ -12,7 +12,7 @@
         "skills": "Habilidades",
         "projects": "Proyectos"
     },
-    "footer": "Hecho con 💙 por <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>",
+    "footer": "Hecho con 💙 por <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue transition-colors duration-300\">Deliever42</a></b>",
     "ataturk": {
         "wikipedia": "https://es.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
         "quotes": [
@@ -139,5 +139,6 @@
             "Para todo en el mundo, para la civilización, para la vida, para el éxito, el maestro más genuino es la ciencia, es un FEV.",
             "Recuerda eso; La mayor guerra es la guerra contra la ignorancia y la reacción."
         ]
-    }
+    },
+    "icon": "https://www.svgrepo.com/show/237396/spain.svg"
 }

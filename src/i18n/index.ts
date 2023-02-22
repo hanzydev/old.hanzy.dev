@@ -13,10 +13,19 @@ export type ILocale = 'de' | 'en-US' | 'es-ES' | 'fr' | 'it' | 'ru' | 'tr-TR' | 
 
 export const localeMap = { de, 'en-US': en, 'es-ES': es, fr, it, ru, 'tr-TR': tr, uk };
 
+export const locales = Object.keys(localeMap) as ILocale[];
+
 export const defaultLocale = 'en-US';
 
 export const processProperties = (localeData: string, props: Record<string, string> = {}) => {
     return Object.keys(props).reduce((acc, key) => acc.replace(`{${key}}`, props[key]), localeData);
+};
+
+export const currentLocale = ref((localStorage.getItem('locale') ?? navigator.language) as ILocale);
+
+export const setLocale = (locale: ILocale) => {
+    currentLocale.value = locale;
+    localStorage.setItem('locale', locale);
 };
 
 export const t = (key: string, props: Record<string, string> = {}) => {
@@ -24,13 +33,11 @@ export const t = (key: string, props: Record<string, string> = {}) => {
         return '';
     }
 
-    let locale = navigator.language as ILocale;
-
-    if (!localeMap[locale]) {
-        locale = defaultLocale;
+    if (!localeMap[currentLocale.value]) {
+        currentLocale.value = defaultLocale;
     }
 
-    const localeData = localeMap[locale];
+    const localeData = localeMap[currentLocale.value];
 
     if (!localeData) {
         return key;

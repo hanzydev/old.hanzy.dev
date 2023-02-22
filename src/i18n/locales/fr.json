@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Bonjour, je m'appelle <b class=\"text-white select-none\">Emirhan</b>, je suis un <b class=\"text-white\">développeur Full-Stack</b> et <b class=\"text-white\">designer UI</b>. Je vis en <b class=\"text-white\"><a href=\"https://fr.wikipedia.org/wiki/Turquie\" target=\"_blank\">Turquie</a></b>.",
+        "about": "Bonjour, je m'appelle <b class=\"text-white select-none\">Emirhan</b>, je suis un <b class=\"text-white\">développeur Full-Stack</b> et <b class=\"text-white\">designer UI</b>.<br />Je vis en <b class=\"text-white\"><a href=\"https://fr.wikipedia.org/wiki/Turquie\" target=\"_blank\">Turquie</a></b>.",
         "short_about": "Bonjour, je m'appelle Emirhan, je suis un développeur Full-Stack et un designer UI. Je vis en Turquie."
     },
     "listening": {
@@ -12,7 +12,7 @@
         "skills": "Compétences",
         "projects": "Projets"
     },
-    "footer": "Fait avec 💙 par <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>",
+    "footer": "Fait avec 💙 par <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue transition-colors duration-300\">Deliever42</a></b>",
     "ataturk": {
         "wikipedia": "https://fr.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
         "quotes": [
@@ -139,5 +139,6 @@
             "Pour tout dans le monde, pour la civilisation, pour la vie, pour le succès, le maître le plus authentique est la science, c'est un FEV.",
             "Rappelez-vous que; La plus grande guerre est la guerre contre l'ignorance et la réaction."
         ]
-    }
+    },
+    "icon": "https://www.svgrepo.com/show/237260/france.svg"
 }
