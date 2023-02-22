@@ -99,6 +99,7 @@
             >
                 <nuxt-img
                     :src="currentLocaleIcon"
+                    :alt="currentLocale"
                     draggable="false"
                     format="webp"
                     height="24"
@@ -130,7 +131,6 @@
                     }"
                 >
                     <nuxt-img
-                        :key="locale"
                         :src="localeMap[locale as ILocale].icon"
                         :alt="locale"
                         draggable="false"
