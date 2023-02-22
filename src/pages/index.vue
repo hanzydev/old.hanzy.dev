@@ -116,7 +116,7 @@
                 <br />
                 <a
                     class="font-bold text-lg font-robotomono mt-auto link max-w-fit"
-                    href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
+                    :href="t('ataturk.wikipedia') as string"
                     target="_blank"
                 >
                     > Mustafa Kemal Atatürk</a
@@ -147,7 +147,6 @@ import { resolveDiscordData } from '../util/resolveDiscordData';
 import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
-import AtaturkQuotes from '../data/ataturk_quotes.json';
 import Config from '../data/config.json';
 import SwearWords from '../data/swear_words.json';
 import gsap from 'gsap';
@@ -157,7 +156,8 @@ import { t } from '../i18n';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const randomQuote = AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)];
+const ataturkQuotes = t('ataturk.quotes');
+const randomQuote = ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)];
 const hasMobile = window.innerWidth < 768;
 const hasMobile2 = window.innerWidth < 1280;
 

@@ -36,5 +36,11 @@ export const t = (key: string, props: Record<string, string> = {}) => {
         return key;
     }
 
-    return processProperties(get(localeData, key) || key, props);
+    const data = get(localeData, key);
+
+    if (!data) {
+        return key;
+    }
+
+    return Array.isArray(data) ? data : processProperties(data, props);
 };
