@@ -100,6 +100,7 @@
 <script setup lang="ts">
 import { useGithub } from '../store';
 import gsap from 'gsap';
+import { t } from '../i18n';
 
 const github = useGithub();
 
@@ -135,7 +136,7 @@ watchEffect(() => {
 });
 
 useHead({
-    title: 'Deliever42 - Projects',
+    title: `Deliever42 - ${t('navbar.projects')}`,
 });
 </script>
 

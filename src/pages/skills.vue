@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
+import { t } from '../i18n';
 import Skills from '../data/skills.json';
 
 onMounted(async () => {
@@ -65,6 +66,6 @@ onMounted(async () => {
 });
 
 useHead({
-    title: 'Deliever42 - Skills',
+    title: `Deliever42 - ${t('navbar.skills')}`,
 });
 </script>

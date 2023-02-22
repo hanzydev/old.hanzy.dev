@@ -398,7 +398,7 @@ watchEffect(() => {
 });
 
 useHead({
-    title: 'Deliever42 - Home',
+    title: `Deliever42 - ${t('navbar.home')}`,
 });
 </script>
 

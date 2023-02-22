@@ -1,5 +1,8 @@
 {
-    "about": "Merhaba! Benim adım <b class=\"text-white select-none\">Emirhan</b>, Ben <b class=\"text-white\">Tam-Yığın Geliştirici</b> ve <b class=\"text-white\">kullanıcı arayüzü (UI) tasarımcısıyım</b>. <b class=\"text-white\"><a href=\"https://tr.wikipedia.org/wiki/T%C3%BCrkiye\" target=\"_blank\">Türkiye</a></b>'de yaşıyorum.",
+    "about": {
+        "about": "Merhaba! Benim adım <b class=\"text-white select-none\">Emirhan</b>, Ben <b class=\"text-white\">Tam-Yığın Geliştirici</b> ve <b class=\"text-white\">kullanıcı arayüzü (UI) tasarımcısıyım</b>. <b class=\"text-white\"><a href=\"https://tr.wikipedia.org/wiki/T%C3%BCrkiye\" target=\"_blank\">Türkiye</a></b>'de yaşıyorum.",
+        "short_about": "Merhaba! Benim adım Emirhan, Ben Tam-Yığın Geliştirici ve kullanıcı arayüzü tasarımcısıyım. Türkiye'de yaşıyorum."
+    },
     "listening": {
         "not_listening": "Şu anda hiçbir şey dinlemiyor.",
         "listening": "Şu anda <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b> dinliyor."

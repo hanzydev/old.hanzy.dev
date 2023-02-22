@@ -1,5 +1,8 @@
 {
-    "about": "Ciao! Mi chiamo <b class=\"text-white select-none\">Emirhan</b>, sono uno <b class=\"text-white\">sviluppatore Full-Stack</b> e <b class=\"text-white\">designer UI</b>. Vivo in <b class=\"text-white\"><a href=\"https://it.wikipedia.org/wiki/Turchia\" target=\"_blank\">Turchia</a></b>.",
+    "about": {
+        "about": "Ciao! Mi chiamo <b class=\"text-white select-none\">Emirhan</b>, sono uno <b class=\"text-white\">sviluppatore Full-Stack</b> e <b class=\"text-white\">designer UI</b>. Vivo in <b class=\"text-white\"><a href=\"https://it.wikipedia.org/wiki/Turchia\" target=\"_blank\">Turchia</a></b>.",
+        "short_about": "Mi chiamo Emirhan, sono uno sviluppatore Full-Stack e un designer UI. Vivo in Turchia."
+    },
     "listening": {
         "not_listening": "Al momento non sto ascoltando nulla.",
         "listening": "Attualmente sto ascoltando <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b>"

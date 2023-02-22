@@ -1,5 +1,8 @@
 {
-    "about": "Hi! My name is <b class=\"text-white select-none\">Emirhan</b>, I am a <b class=\"text-white\">Full-Stack Developer</b> and <b class=\"text-white\">UI Designer</b>. I live in <b class=\"text-white\"><a href=\"https://en.wikipedia.org/wiki/Turkey\" target=\"_blank\">Turkey</a></b>.",
+    "about": {
+        "about": "Hi! My name is <b class=\"text-white select-none\">Emirhan</b>, I am a <b class=\"text-white\">Full-Stack Developer</b> and <b class=\"text-white\">UI Designer</b>. I live in <b class=\"text-white\"><a href=\"https://en.wikipedia.org/wiki/Turkey\" target=\"_blank\">Turkey</a></b>.",
+        "short_about": "Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey."
+    },
     "listening": {
         "not_listening": "Currently not listening to anything.",
         "listening": "Currently Listening to <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b>"
