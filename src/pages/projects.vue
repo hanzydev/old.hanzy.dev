@@ -137,6 +137,16 @@ watchEffect(() => {
 
 useHead({
     title: `Deliever42 - ${t('navbar.projects')}`,
+    meta: [
+        {
+            name: 'description',
+            content: t('about.short_description'),
+        },
+        {
+            property: 'og:description',
+            content: t('about.short_description'),
+        },
+    ],
 });
 </script>
 

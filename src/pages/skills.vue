@@ -67,5 +67,15 @@ onMounted(async () => {
 
 useHead({
     title: `Deliever42 - ${t('navbar.skills')}`,
+    meta: [
+        {
+            name: 'description',
+            content: t('about.short_description'),
+        },
+        {
+            property: 'og:description',
+            content: t('about.short_description'),
+        },
+    ],
 });
 </script>

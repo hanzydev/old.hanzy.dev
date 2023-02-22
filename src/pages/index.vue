@@ -51,7 +51,7 @@
                         {{ discord.data!.user.username
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
-                    <p class="text-gray-300 opacity-0" id="about" v-html="t('about')"></p>
+                    <p class="text-gray-300 opacity-0" id="about" v-html="t('about.about')"></p>
                     <div class="mt-4 opacity-0" id="listening">
                         <div
                             class="flex items-center max-xl:justify-center"
@@ -399,6 +399,16 @@ watchEffect(() => {
 
 useHead({
     title: `Deliever42 - ${t('navbar.home')}`,
+    meta: [
+        {
+            name: 'description',
+            content: t('about.short_description'),
+        },
+        {
+            property: 'og:description',
+            content: t('about.short_description'),
+        },
+    ],
 });
 </script>
 
