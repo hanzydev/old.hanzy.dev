@@ -1,13 +1,13 @@
 {
-    "about": "Bonjour, je m'appelle <b class=\"text-white select-none\">Emirhan</b>, je suis un <b class=\"text-white\">développeur Full-Stack</b> et <b class=\"text-white\">designer UI</b>. Je vis en <b class=\"text-white\"><a href=\"https://fr.wikipedia.org/wiki/Turquie\" target=\"_blank\">Turquie</a></b>.",
+    "about": "Merhaba! Benim adım <b class=\"text-white select-none\">Emirhan</b>, Ben <b class=\"text-white\">Tam-Yığın Geliştirici</b> ve <b class=\"text-white\">UI tasarımcısıyım</b>. <b class=\"text-white\"><a href=\"https://tr.wikipedia.org/wiki/T%C3%BCrkiye\" target=\"_blank\">Türkiye</a></b>'de yaşıyorum.",
     "listening": {
-        "not_listening": "Actuellement, je n'écoute rien du tout.",
-        "listening": "Currently Listening to <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b>"
+        "not_listening": "Şu anda hiçbir şey dinlemiyor.",
+        "listening": "Şu anda <b><a href=\"{song_url}\" target=\"_blank\">{song_name}</a></b> dinliyor."
     },
     "navbar": {
-        "home": "Accueil",
-        "skills": "Compétences",
-        "projects": "Projets"
+        "home": "Ana Sayfa",
+        "skills": "Yetenekler",
+        "projects": "Projeler"
     },
-    "footer": "Fait avec 💙 par <b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b>"
+    "footer": "<b><a href=\"mailto:contact@deliever42.me\" class=\"link link-blue hover:text-blue-600 transition-colors duration-300\">Deliever42</a></b> tarafından 💙 ile yapılmıştır"
 }
