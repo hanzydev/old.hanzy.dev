@@ -35,7 +35,7 @@
                         class="top-[10rem] left-[10rem] absolute p-2 rounded-full z-20"
                         v-if="showStatus"
                         :style="{
-                            backgroundColor: hasMobile2 ? '#131d32' : '#131b2b',
+                            backgroundColor: hasMobile ? '#131d32' : '#131b2b',
                         }"
                     >
                         <div
@@ -156,8 +156,7 @@ import { t, currentLocale } from '../i18n';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const hasMobile = window.innerWidth < 768;
-const hasMobile2 = window.innerWidth < 1280;
+const hasMobile = window.innerWidth < 1280;
 
 let ataturkQuotes = $ref(t('ataturk.quotes'));
 let randomQuote = $ref(ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)]);
