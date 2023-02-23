@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Привет! Меня зовут <b class=\"text-white select-none\">Emirhan</b>, я <b class=\"text-white\">Full-Stack разработчик</b> и <b class=\"text-white\">UI дизайнер</b>.<br />Я живу в <b class=\"text-white\"><a href=\"https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%80%D1%86%D0%B8%D1%8F\" target=\"_blank\">Турции</a></b>.",
+        "about": "Привет! Меня зовут <b class=\"text-white\">Emirhan</b>, я <b class=\"text-white\">Full-Stack разработчик</b> и <b class=\"text-white\">UI дизайнер</b>.<br />Я живу в <b class=\"text-white\"><a href=\"https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%80%D1%86%D0%B8%D1%8F\" target=\"_blank\">Турции</a></b>.",
         "short_about": "Привет! Меня зовут Emirhan, я Full-Stack разработчик и UI дизайнер. Я живу в Турции."
     },
     "listening": {
