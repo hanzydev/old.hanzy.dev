@@ -6,12 +6,12 @@ import es from './locales/es-ES.json';
 import fr from './locales/fr.json';
 import it from './locales/it.json';
 import ru from './locales/ru.json';
-import tr from './locales/tr-TR.json';
+import tr from './locales/tr.json';
 import uk from './locales/uk.json';
 
-export type ILocale = 'de' | 'en-US' | 'es-ES' | 'fr' | 'it' | 'ru' | 'tr-TR' | 'uk';
+export type ILocale = 'de' | 'en-US' | 'es-ES' | 'fr' | 'it' | 'ru' | 'tr' | 'uk';
 
-export const localeMap = { de, 'en-US': en, 'es-ES': es, fr, it, ru, 'tr-TR': tr, uk };
+export const localeMap = { de, 'en-US': en, 'es-ES': es, fr, it, ru, tr, uk };
 
 export const locales = Object.keys(localeMap) as ILocale[];
 
@@ -21,7 +21,13 @@ export const processProperties = (localeData: string, props: Record<string, stri
     return Object.keys(props).reduce((acc, key) => acc.replace(`{${key}}`, props[key]), localeData);
 };
 
-export const currentLocale = ref((localStorage.getItem('locale') ?? navigator.language) as ILocale);
+export const currentLocale = ref(
+    (localeMap[localStorage.getItem('locale') as ILocale]
+        ? localStorage.getItem('locale')
+        : localeMap[navigator.language as ILocale]
+        ? navigator.language
+        : defaultLocale) as ILocale,
+);
 
 export const setLocale = (locale: ILocale) => {
     currentLocale.value = locale;
