@@ -1,4 +1,12 @@
 <template>
+    <div className="fixed h-screen w-screen z-[9999] top-0 left-0 hidden" id="jumpscare-container">
+        <video
+            :src="jumpscareVideo"
+            loop
+            className="h-full w-full object-cover"
+            id="jumpscare"
+        ></video>
+    </div>
     <div
         class="fixed top-0 left-0 bottom-0 right-0 z-[-1] bg-no-repeat scale-[2] rotate-[135deg]"
         id="background-gradient"
@@ -13,11 +21,66 @@
 <script setup lang="ts">
 import { useBodyAttrs } from '@unhead/vue';
 import { useNProgress, isAnimating } from './util/NProgress';
+import SwearWords from './data/swear_words.json';
 
 useNProgress();
 
 useBodyAttrs({
     class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium overflow-x-hidden',
+});
+
+const showJumpscare = (event?: MouseEvent) => {
+    if (event) {
+        event.preventDefault();
+    }
+
+    const container = document.getElementById('jumpscare-container');
+    const video = document.getElementById('jumpscare') as HTMLVideoElement;
+
+    if (container) {
+        container.classList.remove('hidden');
+    }
+
+    if (video) {
+        video.play();
+        video.requestFullscreen();
+    }
+};
+
+const jumpscareVideo =
+    'https://cdn.discordapp.com/attachments/1051778216852996096/1076249777064390686/video.mp4';
+
+const avelVideo =
+    'https://cdn.discordapp.com/attachments/1051778216852996096/1076249777446064188/alah.mp4';
+
+onMounted(() => {
+    const video = document.getElementById('jumpscare') as HTMLVideoElement;
+    video.addEventListener('click', showJumpscare);
+
+    let currentTyping = '';
+
+    document.addEventListener('keydown', function (event) {
+        currentTyping += event.key;
+    });
+
+    setInterval(() => {
+        if (currentTyping.length) {
+            const avelWords = ['avel', 'deliavel', 'deli avel'];
+
+            if (avelWords.some((word) => currentTyping.toLowerCase().includes(word))) {
+                video.src = avelVideo;
+                showJumpscare();
+                currentTyping = '';
+            } else if (SwearWords.some((word) => currentTyping.toLowerCase() === word)) {
+                video.src = jumpscareVideo;
+                showJumpscare();
+                currentTyping = '';
+            } else if (currentTyping.toLowerCase() === 'sisiciuras') {
+                document.body.classList.add('uras');
+                currentTyping = '';
+            }
+        }
+    }, 100);
 });
 </script>
 
@@ -81,5 +144,9 @@ useBodyAttrs({
     ::-webkit-scrollbar-thumb {
         background-color: #191919;
     }
+}
+
+.uras {
+    cursor: url(https://i.imgur.com/7Nng1lB.png), auto !important;
 }
 </style>

@@ -1,12 +1,4 @@
 <template>
-    <div className="fixed h-screen w-screen z-[9999] top-0 left-0 hidden" id="jumpscare-container">
-        <video
-            :src="jumpscareVideo"
-            loop
-            className="h-full w-full object-cover"
-            id="jumpscare"
-        ></video>
-    </div>
     <div id="main">
         <div v-if="discord.dataReceived">
             <div
@@ -51,7 +43,11 @@
                         {{ discord.data!.user.username
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
-                    <p class="text-gray-300 opacity-0 leading-5" id="about" v-html="t('about.about')"></p>
+                    <p
+                        class="text-gray-300 opacity-0 leading-5"
+                        id="about"
+                        v-html="t('about.about')"
+                    ></p>
                     <div class="mt-4 opacity-0" id="listening">
                         <div
                             class="flex items-center max-xl:justify-center"
@@ -148,7 +144,7 @@ import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
 import Config from '../data/config.json';
-import SwearWords from '../data/swear_words.json';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -182,56 +178,7 @@ watch(currentLocale, () => {
 
 let showStatus = $ref(false);
 
-const showJumpscare = (event?: MouseEvent) => {
-    if (event) {
-        event.preventDefault();
-    }
-
-    const container = document.getElementById('jumpscare-container');
-    const video = document.getElementById('jumpscare') as HTMLVideoElement;
-
-    if (container) {
-        container.classList.remove('hidden');
-    }
-
-    if (video) {
-        video.play();
-        video.requestFullscreen();
-    }
-};
-
-const jumpscareVideo =
-    'https://cdn.discordapp.com/attachments/1051778216852996096/1076249777064390686/video.mp4';
-
-const avelVideo =
-    'https://cdn.discordapp.com/attachments/1051778216852996096/1076249777446064188/alah.mp4';
-
 onMounted(() => {
-    const video = document.getElementById('jumpscare') as HTMLVideoElement;
-    video.addEventListener('click', showJumpscare);
-
-    let currentTyping = '';
-
-    document.addEventListener('keydown', function (event) {
-        currentTyping += event.key;
-    });
-
-    setInterval(() => {
-        if (currentTyping.length) {
-            const avelWords = ['avel', 'deliavel', 'deli avel'];
-
-            if (avelWords.some((word) => currentTyping.toLowerCase().includes(word))) {
-                video.src = avelVideo;
-                showJumpscare();
-                currentTyping = '';
-            } else if (SwearWords.some((word) => currentTyping.toLowerCase() === word)) {
-                video.src = jumpscareVideo;
-                showJumpscare();
-                currentTyping = '';
-            }
-        }
-    }, 100);
-
     if (!hasMobile) {
         const goToSection = (height: number) => {
             const route = useRoute();
