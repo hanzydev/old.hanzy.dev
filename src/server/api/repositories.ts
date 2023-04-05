@@ -1,7 +1,7 @@
 import type { GithubRepositoryData } from '../../types';
 
 export default defineEventHandler(async () => {
-    const data = (await fetch(`https://api.github.com/users/deliever42/repos`, {
+    const data = (await fetch(`https://api.github.com/users/hanzydev/repos`, {
         headers: {
             Authorization: `Bearer ${process.env.VITE_GITHUB_TOKEN}`,
         },

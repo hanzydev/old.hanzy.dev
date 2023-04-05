@@ -104,7 +104,7 @@ import { t, currentLocale } from '../i18n';
 
 watch(currentLocale, () => {
     useHead({
-        title: `Deliever42 - ${t('navbar.projects')}`,
+        title: `Hànzy - ${t('navbar.projects')}`,
         meta: [
             {
                 name: 'description',
@@ -152,7 +152,7 @@ watchEffect(() => {
 });
 
 useHead({
-    title: `Deliever42 - ${t('navbar.projects')}`,
+    title: `Hànzy - ${t('navbar.projects')}`,
     meta: [
         {
             name: 'description',

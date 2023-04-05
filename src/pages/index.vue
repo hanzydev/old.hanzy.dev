@@ -162,7 +162,7 @@ watch(currentLocale, () => {
     randomQuote = ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)];
 
     useHead({
-        title: `Deliever42 - ${t('navbar.home')}`,
+        title: `Hànzy - ${t('navbar.home')}`,
         meta: [
             {
                 name: 'description',
@@ -365,7 +365,7 @@ watchEffect(() => {
 });
 
 useHead({
-    title: `Deliever42 - ${t('navbar.home')}`,
+    title: `Hànzy - ${t('navbar.home')}`,
     meta: [
         {
             name: 'description',

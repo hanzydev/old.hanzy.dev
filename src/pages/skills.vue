@@ -34,7 +34,7 @@ import Skills from '../data/skills.json';
 
 watch(currentLocale, () => {
     useHead({
-        title: `Deliever42 - ${t('navbar.skills')}`,
+        title: `Hànzy - ${t('navbar.skills')}`,
         meta: [
             {
                 name: 'description',
@@ -82,7 +82,7 @@ onMounted(async () => {
 });
 
 useHead({
-    title: `Deliever42 - ${t('navbar.skills')}`,
+    title: `Hànzy - ${t('navbar.skills')}`,
     meta: [
         {
             name: 'description',

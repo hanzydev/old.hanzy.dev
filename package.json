@@ -1,7 +1,7 @@
 {
-  "name": "deliever-website",
+  "name": "hanzy-website",
   "version": "1.0.0",
-  "description": "Deliever's website",
+  "description": "Hanzy's website",
   "private": true,
   "scripts": {
     "build": "nuxt build",

@@ -1,14 +1,3 @@
-const randomString = (length: number) => {
-    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let result = '';
-
-    for (let i = length; i > 0; --i) {
-        result += chars[Math.floor(Math.random() * chars.length)];
-    }
-
-    return result;
-};
-
 export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge', '@nuxtjs/robots'],
     srcDir: 'src',
@@ -19,7 +8,7 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            title: 'Deliever42',
+            title: 'Hànzy',
             meta: [
                 {
                     name: 'description',
@@ -28,11 +17,11 @@ export default defineNuxtConfig({
                 },
                 {
                     name: 'keywords',
-                    content: 'deliever42, deliever, emirhan',
+                    content: 'hànzy, hanzy, emirhan',
                 },
                 {
                     name: 'author',
-                    content: 'Deliever42',
+                    content: 'Hànzy',
                 },
                 {
                     name: 'theme-color',
@@ -40,7 +29,7 @@ export default defineNuxtConfig({
                 },
                 {
                     property: 'og:title',
-                    content: 'Deliever42',
+                    content: 'Hànzy',
                 },
                 {
                     property: 'og:description',
@@ -49,11 +38,11 @@ export default defineNuxtConfig({
                 },
                 {
                     property: 'og:image',
-                    content: '/deliever.png',
+                    content: '/hanzy.png',
                 },
                 {
                     property: 'og:url',
-                    content: 'https://deliever42.me',
+                    content: 'https://hanzy.dev',
                 },
             ],
             link: [
@@ -66,23 +55,5 @@ export default defineNuxtConfig({
                 lang: 'en',
             },
         },
-    },
-    vite: {
-        build: {
-            rollupOptions: {
-                output: {
-                    chunkFileNames: () => `_nuxt/chunks/${randomString(64)}.js`,
-                    entryFileNames: () => `_nuxt/chunks/${randomString(64)}.js`,
-                    assetFileNames: () => `_nuxt/assets/${randomString(64)}[extname]`,
-                    manualChunks: (id) => {
-                        if (id.includes('node_modules')) {
-                            return `_nuxt/chunks/${randomString(64)}.js`;
-                        } else {
-                            return id;
-                        }
-                    },
-                },
-            },
-        },
-    },
+    }
 });

@@ -2,7 +2,7 @@
     <nav
         class="flex items-center p-3.5 border-b-[1px] border-b-[#ffffff05] md:justify-evenly fixed w-screen backdrop-blur-sm z-50"
     >
-        <p class="font-robotomono text-xl font-semibold select-none max-md:text-base">deliever42</p>
+        <p class="font-robotomono text-xl font-semibold select-none max-md:text-base">Hànzy</p>
         <div class="flex space-x-6 max-md:space-x-4 items-center max-md:ml-auto">
             <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm max-xs:text-xs link">{{
                 t('navbar.home')
@@ -20,7 +20,7 @@
         </div>
         <div class="flex space-x-2 items-center max-md:hidden">
             <a
-                href="https://github.com/deliever42"
+                href="https://github.com/hanzydev"
                 target="_blank"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#333333] transition-colors duration-300"
                 aria-label="Github"
@@ -34,7 +34,7 @@
                 </svg>
             </a>
             <a
-                href="https://instagram.com/deliever42"
+                href="https://instagram.com/hanzydev"
                 target="_blank"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#b521da] transition-colors duration-300"
                 aria-label="Instagram"
@@ -72,7 +72,7 @@
                 </svg>
             </a>
             <a
-                href="mailto:contact@deliever42.me"
+                href="mailto:hanzydev1@gmail.com"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#ba3a2c] transition-colors duration-300"
                 aria-label="Mail"
             >
