@@ -1,5 +1,10 @@
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxt/image-edge', '@nuxtjs/robots'],
+    modules: [
+        '@nuxtjs/tailwindcss',
+        '@pinia/nuxt',
+        '@nuxt/image-edge',
+        //'@nuxtjs/robots'
+    ],
     srcDir: 'src',
     ssr: false,
     css: ['normalize.css/normalize.css'],
@@ -55,5 +60,5 @@ export default defineNuxtConfig({
                 lang: 'en',
             },
         },
-    }
+    },
 });

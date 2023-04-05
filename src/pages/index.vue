@@ -7,31 +7,27 @@
                 <a
                     :href="`https://discord.com/users/${discord.data!.user.id}`"
                     target="_blank"
-                    class="relative opacity-0"
-                    id="profile"
+                    class="relative opacity-0 flex items-center justify-center w-[250px]"
+                    id="avatar"
                 >
                     <nuxt-img
                         :src="discord.data!.user.avatar_url"
                         :alt="`${discord.data!.user.username}'s avatar`"
-                        class="rounded-full"
                         draggable="false"
                         format="webp"
-                        height="208"
-                        width="208"
                         quality="100"
                         preload
                         loading="eager"
+                        class="o w-full h-full rounded-full"
+                        id="avatar-img"
                         @load="showStatus = true"
                     />
                     <div
-                        class="top-[10rem] left-[10rem] absolute p-2 rounded-full z-20"
+                        class="top-[11.5rem] left-[12.5rem] absolute p-2 rounded-full z-20"
                         v-if="showStatus"
-                        :style="{
-                            backgroundColor: hasMobile ? '#131d32' : '#131b2b',
-                        }"
                     >
                         <div
-                            class="w-6 h-6 rounded-full"
+                            class="w-7 h-7 rounded-full"
                             :style="{
                                 backgroundColor: StatusColors[discord.data!.status]
                             }"
@@ -306,7 +302,7 @@ watchEffect(() => {
     if (discord.dataReceived && !animated) {
         nextTick(() => {
             gsap.fromTo(
-                '#profile',
+                '#avatar',
                 {
                     opacity: 0,
                     y: 50,
@@ -382,5 +378,13 @@ useHead({
 <style>
 #jumpscare::-webkit-media-controls-enclosure {
     display: none !important;
+}
+
+#avatar-img {
+    mask-image: radial-gradient(
+        circle 25px at calc(100% - 27.5px) calc(100% - 43px),
+        transparent 25px,
+        #000 26px
+    );
 }
 </style>
