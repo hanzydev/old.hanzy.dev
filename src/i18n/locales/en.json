@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Hi! My name is <b class=\"text-white\">Emirhan</b>, I am a <b class=\"text-white\">Full-Stack Developer</b> and <b class=\"text-white\">UI Designer</b>.<br />I live in <b class=\"text-white\"><a href=\"https://en.wikipedia.org/wiki/Turkey\" target=\"_blank\">Turkey</a></b>.",
+        "about": "Hi! My name is <b class=\"text-white select-none cursor-pointer\" id=\"mimarselim-trigger\">Emirhan</b>, I am a <b class=\"text-white\">Full-Stack Developer</b> and <b class=\"text-white\">UI Designer</b>.<br />I live in <b class=\"text-white\"><a href=\"https://en.wikipedia.org/wiki/Turkey\" target=\"_blank\">Turkey</a></b>.",
         "short_about": "Hi! My name is Emirhan, I am a Full-Stack Developer and UI Designer. I live in Turkey."
     },
     "listening": {

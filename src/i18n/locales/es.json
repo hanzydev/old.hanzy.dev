@@ -1,6 +1,6 @@
 {
     "about": {
-        "about": "Mi nombre es <b class=\"text-white\">Emirhan</b>, soy un <b class=\"text-white\">desarrollador Full-Stack</b> y <b class=\"text-white\">diseñador de interfaz de usuario</b>.<br />Vivo en <b class=\"text-white\"><a href=\"https://es.wikipedia.org/wiki/Turqu%C3%ADa\" target=\"_blank\">Turquía</a></b>.",
+        "about": "Mi nombre es <b class=\"text-white select-none cursor-pointer\" id=\"mimarselim-trigger\">Emirhan</b>, soy un <b class=\"text-white\">desarrollador Full-Stack</b> y <b class=\"text-white\">diseñador de interfaz de usuario</b>.<br />Vivo en <b class=\"text-white\"><a href=\"https://es.wikipedia.org/wiki/Turqu%C3%ADa\" target=\"_blank\">Turquía</a></b>.",
         "short_about": "Hola, mi nombre es Emirhan, soy un desarrollador Full-Stack y diseñador de interfaz de usuario. Vivo en Turquía."
     },
     "listening": {
