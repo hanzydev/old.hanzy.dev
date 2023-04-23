@@ -90,11 +90,11 @@
                 </a>
             </div>
         </div>
+        <MiniFooter />
     </div>
     <div class="flex items-center justify-center h-screen" v-else>
         <Spinner size="xl" />
     </div>
-    <Footer />
 </template>
 
 <script setup lang="ts">

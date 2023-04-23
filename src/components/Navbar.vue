@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="flex items-center p-3.5 border-b-[1px] border-b-[#ffffff05] md:justify-evenly fixed w-screen backdrop-blur-sm z-50"
+        class="flex items-center p-3.5 border-b-slate-700 border-b-[1px] md:justify-evenly fixed w-screen backdrop-blur-sm z-50"
     >
         <p class="font-robotomono text-xl font-semibold select-none max-md:text-base">Hànzy</p>
         <div class="flex space-x-6 max-md:space-x-4 items-center max-md:ml-auto">

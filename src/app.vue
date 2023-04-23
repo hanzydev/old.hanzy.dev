@@ -48,6 +48,22 @@ watch(
     },
 );
 
+onMounted(() => {
+    const trigger = 'urasbabapro';
+
+    let entered = '';
+    let urasbabaActive = false;
+
+    document.addEventListener('keydown', (e) => {
+        entered += e.key;
+
+        if (entered.includes(trigger) && !urasbabaActive) {
+            urasbabaActive = true;
+            document.body.classList.add('uras');
+        }
+    });
+});
+
 useHead({
     bodyAttrs: {
         class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium overflow-x-hidden',
