@@ -20,9 +20,10 @@
     "gsap": "^3.11.4",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
-    "pinia": "^2.0.30"
+    "pinia": "^2.0.30",
+    "postcss-custom-properties": "^13.1.5"
   },
   "dependencies": {
-    "nuxt": "^3.3.3"
+    "nuxt": "^3.4.2"
   }
 }
