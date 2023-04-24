@@ -13,13 +13,12 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
-import { ReactiveVariable } from 'vue/macros';
 
 onMounted(() => {
     const cursor = document.getElementById('cursor') as HTMLDivElement;
     let seeing = false;
 
-    let links: ReactiveVariable<string[]> = $ref([]);
+    let links = $ref<string[]>([]);
 
     const observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {

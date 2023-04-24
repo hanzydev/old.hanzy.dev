@@ -10,7 +10,6 @@
             :src="t('footer.notbyai.icon') as string"
             :alt="t('footer.notbyai.alt') as string"
             draggable="false"
-            format="webp"
             quality="100"
             preload
             loading="eager"
