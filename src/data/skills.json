@@ -1,7 +1,7 @@
 [
     {
         "name": "JavaScript",
-        "level": 90
+        "level": 95
     },
     {
         "name": "TypeScript",
@@ -13,15 +13,11 @@
     },
     {
         "name": "CSS",
-        "level": 80
+        "level": 85
     },
     {
         "name": "SASS",
-        "level": 75
-    },
-    {
-        "name": "Python",
-        "level": 20
+        "level": 80
     },
     {
         "name": "C#",
@@ -33,7 +29,7 @@
     },
     {
         "name": "Vue",
-        "level": 90
+        "level": 100
     },
     {
         "name": "Svelte",
@@ -41,11 +37,11 @@
     },
     {
         "name": "React",
-        "level": 50
+        "level": 55
     },
     {
         "name": "Nuxt",
-        "level": 80
+        "level": 90
     },
     {
         "name": "SvelteKit",
@@ -53,11 +49,11 @@
     },
     {
         "name": "Next.js",
-        "level": 45
+        "level": 50
     },
     {
         "name": "Node.js",
-        "level": 80
+        "level": 90
     },
     {
         "name": "MongoDB",
@@ -65,10 +61,10 @@
     },
     {
         "name": "MySQL",
-        "level": 80
+        "level": 100
     },
     {
         "name": "SQLite",
-        "level": 80
+        "level": 100
     }
 ]
