@@ -152,11 +152,12 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const hasMobile = window.innerWidth < 1280;
 
 let ataturkQuotes = $ref(t('ataturk.quotes'));
-let randomQuote = $ref(ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)]);
+let randomQuoteIndex = $ref(Math.floor(Math.random() * ataturkQuotes.length));
+let randomQuote = $ref(ataturkQuotes[randomQuoteIndex]);
 
 watch(currentLocale, () => {
     ataturkQuotes = t('ataturk.quotes');
-    randomQuote = ataturkQuotes[Math.floor(Math.random() * ataturkQuotes.length)];
+    randomQuote = ataturkQuotes[randomQuoteIndex];
 
     useHead({
         title: `Hànzy - ${t('navbar.home')}`,
