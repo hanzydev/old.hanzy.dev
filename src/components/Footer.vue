@@ -6,16 +6,7 @@
             class="text-slate-400 text-sm flex items-center gap-0.5"
             v-html="t('footer.long_text', { year: new Date().getFullYear().toString() })"
         ></p>
-        <nuxt-img
-            :src="t('footer.notbyai.icon') as string"
-            :alt="t('footer.notbyai.alt') as string"
-            draggable="false"
-            quality="100"
-            preload
-            loading="eager"
-            class="sm:ml-auto select-none cursor-pointer"
-            @click="handleClick"
-        />
+       <div class="sm:ml-auto select-none cursor-pointer" v-html="t('footer.notbyai.icon')"></div>
     </div>
 </template>
 
