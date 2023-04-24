@@ -1,6 +1,6 @@
 <template>
     <div
-        class="w-full border-t-slate-700 border-t-[1px] flex items-center px-72 h-14 relative bottom-0"
+        class="w-full border-t-slate-700 border-t-[1px] flex items-center px-72 max-sm:flex-col max-sm:gap-y-3 max-sm:px-4 max-[850px]:px-16 max-[1222px]:px-36 max-sm:py-3 h-14 relative bottom-0"
     >
         <p
             class="text-slate-400 text-sm flex items-center gap-0.5"
@@ -14,7 +14,7 @@
             quality="100"
             preload
             loading="eager"
-            class="ml-auto select-none cursor-pointer"
+            class="sm:ml-auto select-none cursor-pointer"
             @click="handleClick"
         />
     </div>
