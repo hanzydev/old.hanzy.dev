@@ -7,8 +7,8 @@
             v-html="t('footer.long_text', { year: new Date().getFullYear().toString() })"
         ></p>
         <nuxt-img
-            src="https://notbyai.fyi/img/written-by-human-not-by-ai-black.svg"
-            :alt="t('footer.notbyai') as string"
+            :src="t('footer.notbyai.icon') as string"
+            :alt="t('footer.notbyai.alt') as string"
             draggable="false"
             format="webp"
             quality="100"
