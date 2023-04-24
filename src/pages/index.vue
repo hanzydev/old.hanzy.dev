@@ -1,8 +1,8 @@
 <template>
     <div id="main">
-        <div v-if="discord.dataReceived">
+        <div v-if="discord.dataReceived" class="flex flex-col h-screen">
             <div
-                class="flex h-screen max-xl:text-center max-xl:flex-col items-center justify-center xl:space-x-24 px-6"
+                class="flex h-full max-xl:text-center max-xl:flex-col items-center justify-center xl:gap-x-24 px-6"
             >
                 <a
                     :href="`https://discord.com/users/${discord.data!.user.id}`"
@@ -90,12 +90,13 @@
                     </div>
                 </div>
             </div>
+            <Footer class="xl:hidden" />
         </div>
         <div class="flex items-center justify-center h-screen" v-else>
             <Spinner size="xl" />
         </div>
     </div>
-    <div class="flex flex-col h-screen">
+    <div class="flex flex-col h-screen max-xl:hidden">
         <div class="flex flex-col items-center justify-center h-full max-xl:hidden" id="footer">
             <div
                 class="w-2/4 rounded-xl px-7 py-6 flex font-robotomono transition-all duration-300"

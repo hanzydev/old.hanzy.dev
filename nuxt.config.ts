@@ -3,7 +3,7 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
         '@nuxt/image-edge',
-        '@nuxtjs/robots'
+        //'@nuxtjs/robots'
     ],
     srcDir: 'src',
     ssr: false,
