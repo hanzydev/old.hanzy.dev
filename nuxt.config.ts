@@ -2,8 +2,6 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
-        '@nuxt/image-edge',
-        '@nuxtjs/robots'
     ],
     srcDir: 'src',
     ssr: false,

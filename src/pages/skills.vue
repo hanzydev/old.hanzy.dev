@@ -29,24 +29,7 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
-import { t, currentLocale } from '../i18n';
 import Skills from '../data/skills.json';
-
-watch(currentLocale, () => {
-    useHead({
-        title: `Hànzy - ${t('navbar.skills')}`,
-        meta: [
-            {
-                name: 'description',
-                content: t('about.short_description'),
-            },
-            {
-                property: 'og:description',
-                content: t('about.short_description'),
-            },
-        ],
-    });
-});
 
 onMounted(async () => {
     const skillLevels = document.querySelectorAll('[data-skill-level]') as NodeListOf<HTMLElement>;
@@ -82,16 +65,6 @@ onMounted(async () => {
 });
 
 useHead({
-    title: `Hànzy - ${t('navbar.skills')}`,
-    meta: [
-        {
-            name: 'description',
-            content: t('about.short_description'),
-        },
-        {
-            property: 'og:description',
-            content: t('about.short_description'),
-        },
-    ],
+    title: `Hànzy - Skills`,
 });
 </script>

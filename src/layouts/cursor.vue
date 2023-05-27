@@ -24,7 +24,9 @@ onMounted(() => {
         for (const mutation of mutations) {
             if (mutation.type === 'childList') {
                 for (const a of document.querySelectorAll('a')) {
-                    if (links.includes(a.id)) continue;
+                    if (links.includes(a.id)) {
+                        continue;
+                    }
 
                     if (!a.id) {
                         a.id = links.length.toString();

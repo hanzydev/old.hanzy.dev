@@ -1,28 +1,28 @@
 <template>
     <nav
-        class="flex items-center p-3.5 border-b-slate-700 border-b-[1px] md:justify-evenly fixed w-screen backdrop-blur-sm z-50"
+        class="px-6 md:px-24 lg:px-56 xl:px-72 2xl:px-96 flex items-center p-3.5 border-b-slate-700 border-b-[1px] md:justify-around fixed w-screen backdrop-blur-sm z-50"
     >
         <p class="font-robotomono text-xl font-semibold select-none max-md:text-base">Hànzy</p>
-        <div class="flex space-x-6 max-md:space-x-4 items-center max-md:ml-auto">
-            <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm max-xs:text-xs link">{{
-                t('navbar.home')
-            }}</RouterLink>
+        <div class="flex space-x-6 max-md:x-4 items-center max-md:ml-auto">
+            <RouterLink to="/" class="font-robotomono text-lg max-md:text-sm max-xs:text-xs link">
+                Home
+            </RouterLink>
             <RouterLink
                 to="/skills"
                 class="font-robotomono text-lg max-md:text-sm max-xs:text-xs link"
-                >{{ t('navbar.skills') }}</RouterLink
+                >Skills</RouterLink
             >
             <RouterLink
                 to="/projects"
                 class="font-robotomono text-lg max-md:text-sm max-xs:text-xs link"
-                >{{ t('navbar.projects') }}</RouterLink
+                >Projects</RouterLink
             >
         </div>
-        <div class="flex space-x-2 items-center max-md:hidden">
+        <div class="flex space-x-2 items-center ml-5 md:ml-0">
             <a
                 href="https://github.com/hanzydev"
                 target="_blank"
-                class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#333333] transition-colors duration-300"
+                class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#333333] transition-colors duration-300 max-md:hidden"
                 aria-label="Github"
             >
                 <svg height="1.5em" viewBox="0 0 16 16" version="1.1" width="1.5em">
@@ -36,7 +36,7 @@
             <a
                 href="https://instagram.com/hanzydev"
                 target="_blank"
-                class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#b521da] transition-colors duration-300"
+                class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#b521da] transition-colors duration-300 max-md:hidden"
                 aria-label="Instagram"
             >
                 <svg
@@ -55,7 +55,7 @@
             <a
                 href="https://discord.com/users/931957993925378050"
                 target="_blank"
-                class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#5865f2] transition-colors duration-300"
+                class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#5865f2] transition-colors duration-300 max-md:hidden"
                 aria-label="Discord"
             >
                 <svg
@@ -72,7 +72,7 @@
                 </svg>
             </a>
             <a
-                href="mailto:hanzydev1@gmail.com"
+                href="mailto:contact@hanzy.dev"
                 class="p-2 rounded-full bg-[#2564ebad] hover:bg-[#ba3a2c] transition-colors duration-300"
                 aria-label="Mail"
             >
@@ -90,160 +90,5 @@
                 </svg>
             </a>
         </div>
-        <div class="relative max-lg:hidden">
-            <button
-                class="p-2 rounded-full bg-[#2564ebad] hover:bg-blue-600 transition-colors duration-300"
-                @click="togglePopover"
-                aria-label="Language Switcher"
-                id="popover-toggler"
-            >
-                <nuxt-img
-                    :src="currentLocaleIcon"
-                    :alt="currentLocale"
-                    draggable="false"
-                    format="webp"
-                    height="24"
-                    width="24"
-                    quality="100"
-                    preload
-                    loading="eager"
-                />
-            </button>
-            <div
-                class="absolute z-50"
-                id="popover"
-                :style="{
-                    display: popoverActive ? 'block' : 'none',
-                }"
-            >
-                <div
-                    v-for="locale in Object.keys(localeMap)"
-                    class="hover:bg-blue-600 transition-colors duration-300 p-2 flex w-full h-full bg-[#2564ebad] cursor-pointer popover-item"
-                    :id="locale"
-                    @click="
-                () => {
-                    setLocale(locale as ILocale);
-                    closePopover()
-                }
-            "
-                    :style="{
-                        display: locale === currentLocale ? 'none' : 'block',
-                    }"
-                >
-                    <nuxt-img
-                        :src="localeMap[locale as ILocale].icon"
-                        :alt="locale"
-                        draggable="false"
-                        format="webp"
-                        height="24"
-                        width="24"
-                        quality="100"
-                        preload
-                        loading="eager"
-                    />
-                </div>
-            </div>
-        </div>
     </nav>
 </template>
-
-<script setup lang="ts">
-import { t, currentLocale, localeMap, ILocale, setLocale } from '../i18n';
-import gsap from 'gsap';
-
-let currentLocaleIcon = localeMap[currentLocale.value].icon;
-let popoverActive = $ref(false);
-let lastChild = $ref('');
-
-const closePopover = () => {
-    gsap.to('#popover-toggler', {
-        borderBottomLeftRadius: '9999px',
-        borderBottomRightRadius: '9999px',
-        duration: 0.3,
-    });
-
-    gsap.to('#popover', {
-        opacity: 0,
-        y: -10,
-        duration: 0.3,
-        onComplete: () => {
-            popoverActive = false;
-        },
-    });
-};
-
-const openPopover = () => {
-    gsap.to('#popover-toggler', {
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 0,
-        duration: 0.3,
-    });
-
-    popoverActive = true;
-
-    nextTick(() => {
-        gsap.fromTo(
-            '#popover',
-            {
-                y: -10,
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.3,
-            },
-        );
-    });
-};
-
-const togglePopover = () => (popoverActive ? closePopover() : openPopover());
-
-const findLastChild = () => {
-    const popoverItems = Array.from(document.querySelectorAll('.popover-item'));
-    return popoverItems
-        .reverse() //@ts-ignore
-        .find((item) => item.style.display !== 'none');
-};
-
-const roundLastChild = () => {
-    const lastItem = findLastChild();
-
-    if (lastItem) {
-        lastItem.classList.add('rounded-b-full');
-        lastChild = lastItem.id;
-    }
-};
-
-const undoRoundLastChild = () => {
-    const lastItem = document.getElementById(lastChild);
-
-    if (lastItem) {
-        lastItem.classList.remove('rounded-b-full');
-        lastChild = '';
-    }
-};
-
-onMounted(() => {
-    document.addEventListener('click', (e: any) => {
-        if (
-            popoverActive &&
-            !e.target.closest('#popover') &&
-            !e.target.closest('#popover-toggler')
-        ) {
-            closePopover();
-        }
-    });
-
-    roundLastChild();
-});
-
-watch(currentLocale, () => {
-    currentLocaleIcon = localeMap[currentLocale.value].icon;
-
-    nextTick(() => {
-        undoRoundLastChild();
-        roundLastChild();
-    });
-});
-</script>

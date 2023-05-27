@@ -4,7 +4,7 @@
         <div
             class="flex h-full pt-[52px] md:pt-[68px] items-center justify-center px-6 md:px-48 mb-8"
         >
-            <div class="grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center justify-center">
+            <div class="grid xl:grid-cols-2 2xl:grid-cols-3 space-x-4 space-y-4 items-center justify-center">
                 <a
                     v-for="repository in github.data"
                     class="repository opacity-0 flex flex-col p-4 rounded-lg shadow-lg h-36 transition-all duration-300"
@@ -20,9 +20,9 @@
                                 : repository.description
                         }}
                     </p>
-                    <div class="flex mt-auto m-0 gap-2">
+                    <div class="flex mt-auto m-0 space-x-2 space-y-2">
                         <button
-                            class="flex text-gray-300 py-1 px-2 gap-2 rounded-lg items-center font-robotomono text-sm"
+                            class="flex text-gray-300 py-1 px-2 space-x-2 space-y-2 rounded-lg items-center font-robotomono text-sm"
                             style="background-color: rgba(0, 0, 0, 0.2)"
                         >
                             <svg height="1em" viewBox="0 0 16 16" version="1.1" width="1em">
@@ -35,7 +35,7 @@
                             {{ repository.stars }}
                         </button>
                         <button
-                            class="flex text-gray-300 py-1 px-2 gap-2 rounded-lg items-center font-robotomono text-sm"
+                            class="flex text-gray-300 py-1 px-2 space-x-2 space-y-2 rounded-lg items-center font-robotomono text-sm"
                             style="background-color: rgba(0, 0, 0, 0.2)"
                         >
                             <svg height="1em" viewBox="0 0 16 16" version="1.1" width="1em">
@@ -48,7 +48,7 @@
                             {{ repository.forks }}
                         </button>
                         <button
-                            class="flex text-gray-300 py-1 px-2 gap-2 rounded-lg items-center font-robotomono text-sm max-sm:hidden"
+                            class="flex text-gray-300 py-1 px-2 space-x-2 space-y-2 rounded-lg items-center font-robotomono text-sm max-sm:hidden"
                             style="background-color: rgba(0, 0, 0, 0.2)"
                         >
                             <svg height="1em" viewBox="0 0 16 16" version="1.1" width="1em">
@@ -65,7 +65,7 @@
                             }}
                         </button>
                         <button
-                            class="flex text-gray-300 py-1 px-2 gap-2 rounded-lg items-center ml-auto font-robotomono text-sm"
+                            class="flex text-gray-300 py-1 px-2 space-x-2 space-y-2 rounded-lg items-center ml-auto font-robotomono text-sm"
                             style="background-color: rgba(0, 0, 0, 0.2)"
                         >
                             <svg
@@ -100,23 +100,6 @@
 <script setup lang="ts">
 import { useGithub } from '../store';
 import gsap from 'gsap';
-import { t, currentLocale } from '../i18n';
-
-watch(currentLocale, () => {
-    useHead({
-        title: `Hànzy - ${t('navbar.projects')}`,
-        meta: [
-            {
-                name: 'description',
-                content: t('about.short_description'),
-            },
-            {
-                property: 'og:description',
-                content: t('about.short_description'),
-            },
-        ],
-    });
-});
 
 const github = useGithub();
 
@@ -152,21 +135,11 @@ watchEffect(() => {
 });
 
 useHead({
-    title: `Hànzy - ${t('navbar.projects')}`,
-    meta: [
-        {
-            name: 'description',
-            content: t('about.short_description'),
-        },
-        {
-            property: 'og:description',
-            content: t('about.short_description'),
-        },
-    ],
+    title: `Hànzy - Projects`,
 });
 </script>
 
-<style>
+<style scoped>
 .repository:hover {
     box-shadow: 0 2px 10px 8px #2564eb1e;
 }

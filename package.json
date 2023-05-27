@@ -11,8 +11,6 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
-    "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.3.1",
     "@pinia/nuxt": "^0.4.6",
     "@types/lodash": "^4.14.191",
@@ -24,6 +22,6 @@
     "postcss-custom-properties": "^13.1.5"
   },
   "dependencies": {
-    "nuxt": "^3.4.2"
+    "nuxt": "^3.5.1"
   }
 }

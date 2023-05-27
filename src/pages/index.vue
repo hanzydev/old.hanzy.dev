@@ -2,7 +2,7 @@
     <div id="main">
         <div v-if="discord.dataReceived" class="flex flex-col h-screen">
             <div
-                class="flex h-full max-xl:text-center max-xl:flex-col items-center justify-center xl:gap-x-24 px-6"
+                class="flex h-full max-xl:text-center max-xl:flex-col items-center justify-center xl:space-x-24 px-6"
             >
                 <a
                     :href="`https://discord.com/users/${discord.data!.user.id}`"
@@ -10,14 +10,10 @@
                     class="relative opacity-0 flex items-center justify-center w-[250px]"
                     id="avatar"
                 >
-                    <nuxt-img
+                    <img
                         :src="discord.data!.user.avatar_url"
                         :alt="`${discord.data!.user.username}'s avatar`"
                         draggable="false"
-                        format="webp"
-                        quality="100"
-                        preload
-                        loading="eager"
                         class="w-full h-full rounded-full"
                         id="avatar-img"
                         @load="showStatus = true"
@@ -39,11 +35,18 @@
                         {{ discord.data!.user.username
                         }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
                     </h1>
-                    <p
-                        class="text-gray-300 opacity-0 leading-5"
-                        id="about"
-                        v-html="t('about.about')"
-                    ></p>
+                    <p class="text-gray-300 opacity-0 leading-5" id="about">
+                        Hi! My name is
+                        <b class="text-white select-none cursor-pointer" id="mimarselim-trigger"
+                            >Emirhan</b
+                        >, I am a <b class="text-white">Full-Stack Developer</b> and
+                        <b class="text-white">UI Designer</b>.<br />I live in
+                        <b class="text-white"
+                            ><a href="https://en.wikipedia.org/wiki/Turkey" target="_blank"
+                                >Turkey</a
+                            ></b
+                        >.
+                    </p>
                     <div class="mt-4 opacity-0" id="listening">
                         <div
                             class="flex items-center max-xl:justify-center"
@@ -66,21 +69,22 @@
                                 />
                             </svg>
                             <p class="text-gray-300" v-if="!ytMusic.data">
-                                {{ t('listening.not_listening') }}
+                                Currently not listening to anything.
                             </p>
-                            <p
-                                class="text-gray-300"
-                                v-else
-                                v-html="
-                                    t('listening.listening', {
-                                        song_url: `https://music.youtube.com/watch?v=${ytMusic.data?.details.videoId}`,
-                                        song_name:
+                            <p class="text-gray-300" v-else>
+                                Currently Listening to
+                                <b
+                                    ><a
+                                        :href="`https://music.youtube.com/watch?v=${ytMusic.data?.details.videoId}`"
+                                        target="_blank"
+                                        >{{
                                             ytMusic.data?.song_name?.length > 60
                                                 ? ytMusic.data?.song_name?.slice(0, 57) + ' ...'
-                                                : ytMusic.data?.song_name,
-                                    })
-                                "
-                            ></p>
+                                                : ytMusic.data?.song_name
+                                        }}</a
+                                    ></b
+                                >
+                            </p>
 
                             <Spinner class="ml-4" size="xs" v-if="ytMusic.newDataReceived" />
                         </div>
@@ -110,7 +114,7 @@
                     <br />
                     <a
                         class="font-bold text-lg font-robotomono mt-auto link max-w-fit"
-                        :href="t('ataturk.wikipedia') as string"
+                        href="https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
                         target="_blank"
                     >
                         > Mustafa Kemal Atatürk</a
@@ -142,38 +146,18 @@ import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
 import { useDiscord, useYoutubeMusic } from '../store';
 import { StatusColors } from '../types';
 import Config from '../data/config.json';
+import AtaturkQuotes from '../data/ataturk-quotes.json';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { t, currentLocale } from '../i18n';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const hasMobile = window.innerWidth < 1280;
 
-let ataturkQuotes = $ref(t('ataturk.quotes'));
-let randomQuoteIndex = $ref(Math.floor(Math.random() * ataturkQuotes.length));
-let randomQuote = $ref(ataturkQuotes[randomQuoteIndex]);
-
-watch(currentLocale, () => {
-    ataturkQuotes = t('ataturk.quotes');
-    randomQuote = ataturkQuotes[randomQuoteIndex];
-
-    useHead({
-        title: `Hànzy - ${t('navbar.home')}`,
-        meta: [
-            {
-                name: 'description',
-                content: t('about.short_description'),
-            },
-            {
-                property: 'og:description',
-                content: t('about.short_description'),
-            },
-        ],
-    });
-});
+let randomQuoteIndex = $ref(Math.floor(Math.random() * AtaturkQuotes.length));
+let randomQuote = $ref(AtaturkQuotes[randomQuoteIndex]);
 
 let showStatus = $ref(false);
 
@@ -364,21 +348,11 @@ watchEffect(() => {
 });
 
 useHead({
-    title: `Hànzy - ${t('navbar.home')}`,
-    meta: [
-        {
-            name: 'description',
-            content: t('about.short_description'),
-        },
-        {
-            property: 'og:description',
-            content: t('about.short_description'),
-        },
-    ],
+    title: `Hànzy - Home`,
 });
 </script>
 
-<style>
+<style scoped>
 #jumpscare::-webkit-media-controls-enclosure {
     display: none !important;
 }
