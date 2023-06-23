@@ -1,27 +1,29 @@
 {
-  "name": "hanzy-website",
-  "version": "1.0.0",
-  "description": "Hanzy's website",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@pinia/nuxt": "^0.4.11",
-    "@types/lodash": "^4.14.195",
-    "@types/node": "^20.3.1",
-    "gsap": "^3.12.1",
-    "lodash": "^4.17.21",
-    "normalize.css": "^8.0.1",
-    "pinia": "^2.1.4",
-    "postcss-custom-properties": "^13.2.0"
-  },
-  "dependencies": {
-    "nuxt": "^3.6.0"
-  }
+    "name": "hanzy-website",
+    "version": "1.0.0",
+    "description": "Hanzy's website",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "format": "prettier --ignore-path .gitignore --write ."
+    },
+    "devDependencies": {
+        "@nuxtjs/tailwindcss": "^6.8.0",
+        "@pinia/nuxt": "^0.4.11",
+        "@types/lodash": "^4.14.195",
+        "@types/node": "^20.3.1",
+        "gsap": "^3.12.1",
+        "lodash": "^4.17.21",
+        "normalize.css": "^8.0.1",
+        "pinia": "^2.1.4",
+        "postcss-custom-properties": "^13.2.0",
+        "prettier": "^2.8.8"
+    },
+    "dependencies": {
+        "nuxt": "^3.6.0"
+    }
 }
