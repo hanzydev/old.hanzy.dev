@@ -17,39 +17,27 @@
     },
     {
         "name": "SASS",
-        "level": 80
+        "level": 85
     },
     {
         "name": "C#",
-        "level": 50
+        "level": 40
     },
     {
         "name": "C++",
-        "level": 30
+        "level": 25
     },
     {
-        "name": "Vue",
+        "name": "Vue & Nuxt",
         "level": 100
     },
     {
-        "name": "Svelte",
-        "level": 65
-    },
-    {
-        "name": "React",
-        "level": 55
-    },
-    {
-        "name": "Nuxt",
+        "name": "Svelte & SvelteKit",
         "level": 90
     },
     {
-        "name": "SvelteKit",
-        "level": 50
-    },
-    {
-        "name": "Next.js",
-        "level": 50
+        "name": "React & Next.js",
+        "level": 70
     },
     {
         "name": "Node.js",

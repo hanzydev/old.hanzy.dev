@@ -107,7 +107,7 @@
             >
                 <div class="flex flex-col max-w-[98.5%]">
                     <p class="font-semibold text-md break-words">
-                        {{ AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)] }}
+                        {{ randomAtaturkQuote }}
                     </p>
                     <br />
                     <br />
@@ -140,52 +140,20 @@
 </template>
 
 <script setup lang="ts">
-import { resolveDiscordData } from '../util/resolveDiscordData';
-import { resolveYoutubeMusicData } from '../util/resolveYoutubeMusicData';
-import { useDiscord, useYoutubeMusic } from '../store';
-import { StatusColors } from '../types';
-import Config from '../data/config.json';
-import AtaturkQuotes from '../data/ataturk-quotes.json';
-
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { resolveDiscordData } from '@/util/resolveDiscordData';
+import { resolveYoutubeMusicData } from '@/util/resolveYoutubeMusicData';
+import { useDiscord, useYoutubeMusic } from '@/store';
+import { StatusColors } from '@/types';
+import Config from '@/data/config.json';
+import AtaturkQuotes from '@/data/ataturk-quotes.json';
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+const randomAtaturkQuote = AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)];
 
-const hasMobile = window.innerWidth < 1280;
+const hasMobile = computed(() => window.innerWidth < 1280);
 const showStatus = ref(false);
-
-onMounted(() => {
-    if (!hasMobile) {
-        const goToSection = (height: number) => {
-            const route = useRoute();
-
-            if (route.path === '/') {
-                gsap.to(window, {
-                    scrollTo: { y: height, autoKill: false },
-                    duration: 1,
-                    overwrite: true,
-                    ease: 'circ.inOut',
-                });
-            }
-        };
-
-        ScrollTrigger.create({
-            trigger: '#main',
-            start: 'top bottom',
-            end: '+=200%',
-            onToggle: (self) => self.isActive && goToSection(0),
-        });
-
-        ScrollTrigger.create({
-            trigger: '#footer',
-            start: 'top bottom',
-            end: '+=200%',
-            onToggle: (self) => self.isActive && goToSection(innerHeight),
-        });
-    }
-});
 
 const discord = useDiscord();
 const ytMusic = useYoutubeMusic();
@@ -276,8 +244,6 @@ const connect = () => {
     };
 };
 
-connect();
-
 let animated = false;
 
 watchEffect(() => {
@@ -342,8 +308,49 @@ watchEffect(() => {
     }
 });
 
+onMounted(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    if (!hasMobile.value) {
+        const goToSection = (height: number) => {
+            const route = useRoute();
+
+            if (route.path === '/') {
+                gsap.to(window, {
+                    scrollTo: { y: height, autoKill: false },
+                    duration: 1,
+                    overwrite: true,
+                    ease: 'circ.inOut',
+                });
+            }
+        };
+
+        ScrollTrigger.create({
+            trigger: '#main',
+            start: 'top bottom',
+            end: '+=200%',
+            onToggle: (self) => self.isActive && goToSection(0),
+        });
+
+        ScrollTrigger.create({
+            trigger: '#footer',
+            start: 'top bottom',
+            end: '+=200%',
+            onToggle: (self) => self.isActive && goToSection(innerHeight),
+        });
+    }
+
+    connect();
+});
+
 useHead({
-    title: `Hànzy - Home`,
+    title: `Home`,
+    meta: [
+        {
+            name: 'og:title',
+            content: 'Home | Hànzy',
+        },
+    ],
 });
 </script>
 

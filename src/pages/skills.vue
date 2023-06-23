@@ -24,12 +24,12 @@
             </div>
         </div>
     </div>
-    <MiniFooter />
+    <Footer />
 </template>
 
 <script setup lang="ts">
 import gsap from 'gsap';
-import Skills from '../data/skills.json';
+import Skills from '@/data/skills.json';
 
 onMounted(async () => {
     const skillLevels = document.querySelectorAll('[data-skill-level]') as NodeListOf<HTMLElement>;
@@ -65,6 +65,12 @@ onMounted(async () => {
 });
 
 useHead({
-    title: `Hànzy - Skills`,
+    title: `Skills`,
+    meta: [
+        {
+            name: 'og:title',
+            content: 'Skills | Hànzy',
+        },
+    ],
 });
 </script>

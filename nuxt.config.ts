@@ -1,14 +1,9 @@
 export default defineNuxtConfig({
-    modules: [
-        '@nuxtjs/tailwindcss',
-        '@pinia/nuxt',
-    ],
+    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
     srcDir: 'src',
-    ssr: false,
     css: ['normalize.css/normalize.css'],
     app: {
         head: {
-            title: 'Hànzy',
             meta: [
                 {
                     name: 'description',

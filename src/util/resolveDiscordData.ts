@@ -1,7 +1,6 @@
-import type { DiscordData } from '../types';
+import type { DiscordData } from '@/types';
 
 export async function resolveDiscordData(data: any): Promise<DiscordData> {
-    console.log(data);
     return {
         status: data.discord_status,
         user: {

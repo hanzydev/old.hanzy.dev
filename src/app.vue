@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { useDiscord } from './store';
+import { useDiscord } from '@/store';
 
 const discord = useDiscord();
 
@@ -44,23 +44,8 @@ watch(
     },
 );
 
-onMounted(() => {
-    const trigger = 'urasbabapro';
-
-    let entered = '';
-    let urasbabaActive = false;
-
-    document.addEventListener('keydown', (e) => {
-        entered += e.key;
-
-        if (entered.includes(trigger) && !urasbabaActive) {
-            urasbabaActive = true;
-            document.body.classList.add('uras');
-        }
-    });
-});
-
 useHead({
+    titleTemplate: '%s | Hànzy',
     bodyAttrs: {
         class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium overflow-x-hidden',
     },
@@ -72,9 +57,9 @@ useHead({
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 #background-gradient {
-    background: radial-gradient(at 50% 50%, #2564eb3d 0%, #2564eb00 65%);
     background-size: 100%;
     background-position: 50%;
+    @apply bg-[radial-gradient(at_50%_50%,#2564eb3d_0%,#2564eb00_65%)];
 }
 
 .font-robotomono {
@@ -82,54 +67,32 @@ useHead({
 }
 
 .link {
-    position: relative;
+    @apply relative;
 }
 
 .link::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    border-radius: 4px;
-    background-color: #fff;
-    bottom: 0;
-    left: 0;
-    top: calc(100% + 1px);
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-.link-blue::before {
-    background-color: rgb(37 99 235);
-}
-
-.link-blue:hover {
-    color: rgb(37 99 235);
+    @apply absolute w-full h-0.5 rounded-[4px] bg-white bottom-0 left-0 transform duration-300 ease-in-out scale-x-0 origin-left content-[''] top-[calc(100%+1px)];
 }
 
 .link:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
+    @apply scale-x-100 origin-left;
 }
 
 ::-webkit-scrollbar {
-    width: 0;
+    @apply w-0;
 }
 
 @media not all and (min-width: 1280px) {
     ::-webkit-scrollbar {
-        width: 0.4rem;
+        @apply w-[0.4rem];
     }
-    ::-webkit-scrollbar-track {
-        background-color: unset;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: #191919;
-    }
-}
 
-.uras {
-    cursor: url(https://i.imgur.com/7Nng1lB.png), auto !important;
+    ::-webkit-scrollbar-track {
+        @apply bg-[unset];
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-[#191919];
+    }
 }
 </style>

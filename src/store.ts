@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import type { DiscordData, YoutubeMusicData, GithubRepositoryData } from './types';
+import type { DiscordData, YoutubeMusicData, GithubRepositoryData } from '@/types';
 
 export const useDiscord = defineStore({
     id: 'discord',

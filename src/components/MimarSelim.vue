@@ -11,17 +11,22 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 
-const { active } = defineProps<{
+const props = defineProps<{
     active: boolean;
 }>();
 
-const audio = new Audio(
-    'https://cdn.discordapp.com/attachments/1089486214832324679/1094319984299225249/static_notification.mp3',
-);
+const { active } = toRefs(props);
 
-watch(
-    () => active,
-    (state) => {
+const handleClick = () => {
+    window!.open('https://www.youtube.com/watch?v=VYaD6pv4WYQ', '_blank');
+};
+
+onMounted(() => {
+    const audio = new Audio(
+        'https://cdn.discordapp.com/attachments/1089486214832324679/1094319984299225249/static_notification.mp3',
+    );
+
+    watch(active, (state) => {
         if (state) {
             nextTick(() => {
                 audio.play();
@@ -59,10 +64,6 @@ watch(
                 },
             );
         }
-    },
-);
-
-const handleClick = () => {
-    window!.open('https://www.youtube.com/watch?v=VYaD6pv4WYQ', '_blank');
-};
+    });
+});
 </script>
