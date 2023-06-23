@@ -11,17 +11,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.3.1",
-    "@pinia/nuxt": "^0.4.6",
-    "@types/lodash": "^4.14.191",
-    "@types/node": "^18.13.0",
-    "gsap": "^3.11.4",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@pinia/nuxt": "^0.4.11",
+    "@types/lodash": "^4.14.195",
+    "@types/node": "^20.3.1",
+    "gsap": "^3.12.1",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
-    "pinia": "^2.0.30",
-    "postcss-custom-properties": "^13.1.5"
+    "pinia": "^2.1.4",
+    "postcss-custom-properties": "^13.2.0"
   },
   "dependencies": {
-    "nuxt": "^3.5.1"
+    "nuxt": "^3.6.0"
   }
 }
