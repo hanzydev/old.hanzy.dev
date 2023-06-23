@@ -32,8 +32,7 @@
                 </a>
                 <div>
                     <h1 class="font-robotomono font-bold opacity-0" id="name">
-                        {{ discord.data!.user.username
-                        }}<b class="text-gray-400">#{{ discord.data!.user.discriminator }}</b>
+                        {{ discord.data!.user.username }}
                     </h1>
                     <p class="text-gray-300 opacity-0 leading-5" id="about">
                         Hi! My name is

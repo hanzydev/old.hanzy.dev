@@ -1,11 +1,12 @@
 import type { DiscordData } from '../types';
 
 export async function resolveDiscordData(data: any): Promise<DiscordData> {
+    console.log(data);
     return {
         status: data.discord_status,
         user: {
             username: data.discord_user.username,
-            discriminator: data.discord_user.discriminator,
+            display_name: data.discord_user.display_name,
             tag: data.discord_user.username + '#' + data.discord_user.discriminator,
             id: data.discord_user.id,
             avatar_url: `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${

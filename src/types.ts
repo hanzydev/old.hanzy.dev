@@ -2,7 +2,7 @@ export interface DiscordData {
     status: 'online' | 'idle' | 'dnd' | 'offline';
     user: {
         username: string;
-        discriminator: string;
+        display_name: string;
         tag: `${string}#${string}`;
         id: string;
         avatar_url: string;
