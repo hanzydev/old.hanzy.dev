@@ -2,6 +2,7 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
     srcDir: 'src',
     css: ['normalize.css/normalize.css'],
+    devtools: { enabled: true },
     app: {
         head: {
             meta: [
