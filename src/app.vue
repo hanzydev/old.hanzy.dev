@@ -5,17 +5,13 @@
     ></div>
     <MimarSelim :active="active" />
     <NuxtLayout name="cursor">
-        <NProgress :animating="isAnimating" />
         <Navbar />
         <NuxtPage />
     </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import { useNProgress, isAnimating } from './util/NProgress';
 import { useDiscord } from './store';
-
-useNProgress();
 
 const discord = useDiscord();
 
