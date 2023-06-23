@@ -45,7 +45,14 @@ watch(
 );
 
 useHead({
-    titleTemplate: '%s | Hànzy',
+    title: 'Hànzy',
+    titleTemplate: (title) => (title ? (title === 'Hànzy' ? title : `${title} | Hànzy`) : 'Hànzy'),
+    meta: [
+        {
+            name: 'og:title',
+            content: 'Hànzy',
+        },
+    ],
     bodyAttrs: {
         class: 'bg-[#101010] w-full h-full text-white font-[Montserrat] font-medium overflow-x-hidden',
     },
