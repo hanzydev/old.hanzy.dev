@@ -18,21 +18,21 @@ onMounted(() => {
     const cursor = document.getElementById('cursor') as HTMLDivElement;
     let seeing = false;
 
-    let links = $ref<string[]>([]);
+    const links = ref<string[]>([]);
 
     const observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
             if (mutation.type === 'childList') {
                 for (const a of document.querySelectorAll('a')) {
-                    if (links.includes(a.id)) {
+                    if (links.value.includes(a.id)) {
                         continue;
                     }
 
                     if (!a.id) {
-                        a.id = links.length.toString();
+                        a.id = links.value.length.toString();
                     }
 
-                    links.push(a.id);
+                    links.value.push(a.id);
 
                     a.addEventListener('mouseenter', () => {
                         gsap.to(cursor, {

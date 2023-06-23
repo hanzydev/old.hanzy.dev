@@ -6,9 +6,6 @@ export default defineNuxtConfig({
     srcDir: 'src',
     ssr: false,
     css: ['normalize.css/normalize.css'],
-    experimental: {
-        reactivityTransform: true,
-    },
     app: {
         head: {
             title: 'Hànzy',

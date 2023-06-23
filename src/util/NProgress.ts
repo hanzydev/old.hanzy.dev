@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-export let isAnimating = $ref(false);
+export let isAnimating = ref(false);
 let progress = 0;
 let timer: number;
 
@@ -33,7 +33,7 @@ const updateProgress = () => {
 };
 
 const start = () => {
-    isAnimating = true;
+    isAnimating.value = true;
 
     nextTick(() => {
         updateProgress();
@@ -59,7 +59,7 @@ const end = () => {
                     gsap.set('#nprogress', { width: 0 });
 
                     progress = 0;
-                    isAnimating = false;
+                    isAnimating.value = false;
                 },
             });
         },

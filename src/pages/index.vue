@@ -107,7 +107,7 @@
             >
                 <div class="flex flex-col max-w-[98.5%]">
                     <p class="font-semibold text-md break-words">
-                        {{ randomQuote }}
+                        {{ AtaturkQuotes[Math.floor(Math.random() * AtaturkQuotes.length)] }}
                     </p>
                     <br />
                     <br />
@@ -154,11 +154,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const hasMobile = window.innerWidth < 1280;
-
-let randomQuoteIndex = $ref(Math.floor(Math.random() * AtaturkQuotes.length));
-let randomQuote = $ref(AtaturkQuotes[randomQuoteIndex]);
-
-let showStatus = $ref(false);
+const showStatus = ref(false);
 
 onMounted(() => {
     if (!hasMobile) {

@@ -19,8 +19,8 @@ useNProgress();
 
 const discord = useDiscord();
 
-let times = $ref(0);
-let active = $ref(false);
+const times = ref(0);
+const active = ref(false);
 
 watch(
     () => discord.dataReceived,
@@ -30,17 +30,17 @@ watch(
                 const trigger = document.getElementById('mimarselim-trigger')!;
 
                 trigger.addEventListener('click', () => {
-                    times++;
+                    times.value++;
 
-                    if (times >= 10) {
-                        active = true;
+                    if (times.value >= 10) {
+                        active.value = true;
 
                         setTimeout(() => {
-                            times = 0;
-                            active = false;
+                            times.value = 0;
+                            active.value = false;
                         }, 5000);
                     } else {
-                        active = false;
+                        active.value = false;
                     }
                 });
             });
