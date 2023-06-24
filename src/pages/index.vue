@@ -355,10 +355,6 @@ useHead({
 </script>
 
 <style scoped>
-#jumpscare::-webkit-media-controls-enclosure {
-    display: none !important;
-}
-
 #avatar-img {
     mask-image: radial-gradient(
         circle 25px at calc(100% - 27.5px) calc(100% - 43px),
