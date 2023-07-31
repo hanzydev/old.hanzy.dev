@@ -36,7 +36,7 @@ export const useYoutubeMusic = defineStore({
 export const useGithub = defineStore({
     id: 'github',
     state: () => ({
-        data: null as GithubRepositoryData[] | null,
+        data: [] as GithubRepositoryData[],
         dataReceived: false,
     }),
     actions: {

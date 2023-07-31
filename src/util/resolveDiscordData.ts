@@ -6,7 +6,6 @@ export async function resolveDiscordData(data: any): Promise<DiscordData> {
         user: {
             username: data.discord_user.username,
             display_name: data.discord_user.display_name,
-            tag: data.discord_user.username + '#' + data.discord_user.discriminator,
             id: data.discord_user.id,
             avatar_url: `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${
                 data.discord_user.avatar

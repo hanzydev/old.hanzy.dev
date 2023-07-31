@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.font-robotomono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-roobertpro {
+    font-family:
+        RoobertPRO,
+        RoobertPRO override,
+        sans-serif;
+}
+
+.link {
+    @apply relative;
+}
+
+.link::before {
+    @apply absolute w-full h-0.5 rounded-[4px] bg-white bottom-0 left-0 transform duration-300 ease-in-out scale-x-0 origin-left content-[''] top-[calc(100%+1px)];
+}
+
+.link:hover::before {
+    @apply scale-x-100 origin-left;
+}
+
+::-webkit-scrollbar {
+    @apply w-0;
+}
+
+@media not all and (min-width: 1280px) {
+    ::-webkit-scrollbar {
+        @apply w-[0.4rem];
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-[unset];
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-[#191919];
+    }
+}

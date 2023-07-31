@@ -16,7 +16,7 @@ import gsap from 'gsap';
 
 onMounted(() => {
     const cursor = document.getElementById('cursor') as HTMLDivElement;
-    let seeing = false;
+    const sees = ref(false);
 
     const links = ref<string[]>([]);
 
@@ -62,7 +62,7 @@ onMounted(() => {
             gsap.to(cursor, {
                 x: e.clientX - 10,
                 y: e.clientY - 10,
-                duration: seeing ? 0.2 : 0,
+                duration: sees.value ? 0.2 : 0,
             });
         }
     });
@@ -72,7 +72,7 @@ onMounted(() => {
             opacity: 0,
             duration: 0.2,
             onComplete: () => {
-                seeing = false;
+                sees.value = false;
             },
         });
     });
@@ -82,7 +82,7 @@ onMounted(() => {
             opacity: 1,
             duration: 0.2,
             onComplete: () => {
-                seeing = true;
+                sees.value = true;
             },
         });
     });

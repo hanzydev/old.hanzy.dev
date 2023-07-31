@@ -3,9 +3,8 @@ export interface DiscordData {
     user: {
         username: string;
         display_name: string;
-        tag: `${string}#${string}`;
-        id: string;
         avatar_url: string;
+        id: string;
     };
 }
 

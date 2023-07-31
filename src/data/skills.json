@@ -5,7 +5,7 @@
     },
     {
         "name": "TypeScript",
-        "level": 85
+        "level": 90
     },
     {
         "name": "HTML",
@@ -24,24 +24,24 @@
         "level": 40
     },
     {
-        "name": "C++",
-        "level": 25
-    },
-    {
         "name": "Vue & Nuxt",
         "level": 100
     },
     {
         "name": "Svelte & SvelteKit",
-        "level": 90
+        "level": 100
     },
     {
         "name": "React & Next.js",
-        "level": 70
+        "level": 100
     },
     {
         "name": "Node.js",
-        "level": 90
+        "level": 100
+    },
+    {
+        "name": "Deno",
+        "level": 100
     },
     {
         "name": "MongoDB",
@@ -49,10 +49,6 @@
     },
     {
         "name": "MySQL",
-        "level": 100
-    },
-    {
-        "name": "SQLite",
         "level": 100
     },
     {

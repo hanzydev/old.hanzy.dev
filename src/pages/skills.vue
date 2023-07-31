@@ -1,8 +1,10 @@
 <template>
     <div class="lg:pt-8"></div>
-    <div class="flex pt-[52px] md:pt-[68px] px-6 md:px-48 items-center justify-center mb-8">
-        <div class="space-y-3 w-screen xl:w-3/4 2xl:w-2/4 pt-6">
-            <div v-for="skill in Skills" class="flex flex-col space-y-1">
+    <div
+        class="font-robotomono flex pt-[52px] md:pt-[68px] px-6 md:px-48 items-center justify-center mb-8"
+    >
+        <div class="space-y-3.5 w-screen xl:w-3/4 2xl:w-2/4 pt-6">
+            <div v-for="skill in skills" class="flex flex-col space-y-1">
                 <div class="flex">
                     <p class="text-gray-300">{{ skill.name }}</p>
                     <p class="text-gray-300 ml-auto opacity-0">{{ skill.level }}%</p>
@@ -10,10 +12,9 @@
 
                 <div class="relative w-full h-2 bg-gray-800 rounded-full">
                     <div
-                        class="absolute top-0 left-0 h-2 rounded-full"
+                        class="absolute top-0 left-0 h-2 rounded-full w-0"
                         :data-skill-level="skill.level"
                         :style="{
-                            width: `0%`,
                             backgroundColor:
                                 skill.level < 60
                                     ? `hsl(${skill.level}, 100%, 45%)`
@@ -29,7 +30,7 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
-import Skills from '@/data/skills.json';
+import skills from '@/data/skills.json';
 
 onMounted(async () => {
     const skillLevels = document.querySelectorAll('[data-skill-level]') as NodeListOf<HTMLElement>;
@@ -65,7 +66,7 @@ onMounted(async () => {
 });
 
 useHead({
-    title: `Skills`,
+    title: 'Skills',
     meta: [
         {
             name: 'og:title',
