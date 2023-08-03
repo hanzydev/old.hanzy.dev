@@ -32,6 +32,40 @@
 import gsap from 'gsap';
 import skills from '@/data/skills.json';
 
+const router = useRouter();
+
+router.beforeEach(async (to, from, next) => {
+    if (from.name === 'skills' && to.name !== 'skills') {
+        const skillLevels = document.querySelectorAll(
+            '[data-skill-level]',
+        ) as NodeListOf<HTMLElement>;
+
+        for (const skillLevel of [...skillLevels].reverse()) {
+            const level = skillLevel.dataset.skillLevel;
+
+            gsap.to(skillLevel, {
+                width: '0%',
+                duration: 0.5,
+                ease: 'power4.out',
+            });
+
+            const p = skillLevel.parentElement!.parentElement!.children[0]
+                .children[1] as HTMLParagraphElement;
+
+            gsap.to(p, {
+                opacity: 0,
+                duration: 0.15,
+                x: 50,
+                ease: 'circ.out',
+            });
+
+            await new Promise((resolve) => setTimeout(resolve, 40));
+        }
+    }
+
+    next();
+});
+
 onMounted(async () => {
     const skillLevels = document.querySelectorAll('[data-skill-level]') as NodeListOf<HTMLElement>;
 

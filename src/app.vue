@@ -121,6 +121,10 @@ watch(
             nextTick(() => {
                 const trigger = document.getElementById('mimarselim-trigger')!;
 
+                if (!trigger) {
+                    return;
+                }
+
                 trigger.addEventListener('click', () => {
                     times.value++;
 

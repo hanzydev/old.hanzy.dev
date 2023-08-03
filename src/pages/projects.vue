@@ -4,7 +4,7 @@
         <div class="grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 items-center justify-center">
             <a
                 v-for="repository in github.data"
-                class="repository opacity-0 flex flex-col p-4 rounded-lg shadow-lg h-36 transition-all duration-300"
+                class="repository opacity-0 flex flex-col p-4 rounded-lg shadow-lg h-36 transition-all duration-300 hover:!-translate-y-1.5"
                 style="background-color: rgba(0, 0, 0, 0.2)"
                 :href="repository.url"
                 target="_blank"
@@ -61,6 +61,7 @@
 import gsap from 'gsap';
 import { useGithub } from '@/store';
 
+const router = useRouter();
 const github = useGithub();
 
 if (!github.dataReceived) {
@@ -68,40 +69,32 @@ if (!github.dataReceived) {
     github.setData(Array.from(data.value!));
 }
 
-const onRepositoryHover = (event: Event) => {
-    const target = event.target as HTMLElement;
-    const repository = target.closest('.repository') as HTMLElement;
-
-    gsap.set(repository, { translateY: -5 });
-};
-
-const onRepositoryLeave = (event: Event) => {
-    const target = event.target as HTMLElement;
-    const repository = target.closest('.repository') as HTMLElement;
-
-    gsap.set(repository, { translateY: 0 });
-};
-
-onMounted(async () => {
-    nextTick(() => {
-        gsap.fromTo('.repository', { y: 20 }, { opacity: 1, y: 0, duration: 0.2, stagger: 0.05 });
-
-        const repositories = document.querySelectorAll('.repository');
-
-        repositories.forEach((repository) => {
-            repository.addEventListener('mouseenter', onRepositoryHover);
-            repository.addEventListener('mouseleave', onRepositoryLeave);
+router.beforeEach(async (to, from, next) => {
+    if (from.name === 'projects' && to.name !== 'projects') {
+        await gsap.to('.repository', {
+            opacity: 0,
+            y: 20,
+            duration: 0.2,
+            stagger: -0.05,
         });
-    });
+    }
+
+    next();
 });
 
-onUnmounted(() => {
-    const repositories = document.querySelectorAll('.repository');
-
-    repositories.forEach((repository) => {
-        repository.removeEventListener('mouseenter', onRepositoryHover);
-        repository.removeEventListener('mouseleave', onRepositoryLeave);
-    });
+onMounted(() => {
+    gsap.fromTo(
+        '.repository',
+        {
+            y: 20,
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.2,
+            stagger: 0.05,
+        },
+    );
 });
 
 useHead({

@@ -38,6 +38,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useDiscord } from '@/store';
 
 const discord = useDiscord();
+
 const isMobile = ref(false);
 const animated = ref(false);
 
