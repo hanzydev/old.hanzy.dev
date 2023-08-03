@@ -1,4 +1,5 @@
 <template>
+    <NuxtLoadingIndicator :throttle="0" :duration="3000" color="#2563EB" />
     <div
         class="fixed top-0 left-0 bottom-0 right-0 z-[-1] bg-no-repeat scale-[2] rotate-[135deg]"
         id="background-gradient"
